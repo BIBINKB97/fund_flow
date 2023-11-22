@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fund_flow/database/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/transaction_list/edit_and_view_details/detailed_view_of_transaction.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
@@ -42,18 +43,18 @@ class _RecentState extends State<Recent> {
                           leading: CircleAvatar(
                             radius: 25,
                             backgroundColor: value.type == CategoryType.income
-                                ? Colors.green
-                                : Colors.red,
+                                ? kgreen
+                                : kred,
                             child: value.type == CategoryType.income
                                 ? Icon(
                                     Icons.arrow_upward,
                                     size: 28,
-                                    color: Colors.white,
+                                    color: kwhite,
                                   )
                                 : Icon(
                                     Icons.arrow_downward,
                                     size: 28,
-                                    color: Colors.white,
+                                    color: kwhite,
                                   ),
                           ),
                           title: Text(
@@ -76,8 +77,8 @@ class _RecentState extends State<Recent> {
                               fontSize: 22,
                               fontWeight: FontWeight.w500,
                               color: value.type == CategoryType.income
-                                  ? Colors.green
-                                  : Colors.red,
+                                  ? kgreen
+                                  : kred,
                             ),
                           ),
                         ),
@@ -96,7 +97,7 @@ class _RecentState extends State<Recent> {
                         ),
                         ColorFiltered(
                           colorFilter:
-                              ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                              ColorFilter.mode(kblack, BlendMode.srcIn),
                           child: Lottie.asset(
                             'images/noresults.json',
                             width: MediaQuery.of(context).size.width * 0.4,
@@ -107,7 +108,7 @@ class _RecentState extends State<Recent> {
                           "  No transactions yet !",
                           style: TextStyle(
                             fontSize: 25,
-                            color: Colors.grey,
+                            color: kgrey,
                           ),
                         ),
                       ],

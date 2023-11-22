@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/chart_db/chart_db.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/financial_report/model.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:lottie/lottie.dart';
@@ -58,11 +59,11 @@ class _FinancialReportState extends State<FinancialReport>
           style: TextStyle(
               fontSize: width * 0.06,
               fontWeight: FontWeight.w600,
-              color: Colors.white),
+              color: kwhite),
         ),
         toolbarHeight: 70,
         elevation: 1,
-        backgroundColor: Color.fromARGB(210, 151, 52, 184),
+        backgroundColor:ktheme,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -75,8 +76,8 @@ class _FinancialReportState extends State<FinancialReport>
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: const [
-                Color.fromARGB(210, 151, 52, 184),
-                Colors.white,
+                ktheme,
+                kwhite,
               ],
             ),
           ),
@@ -109,7 +110,7 @@ class _FinancialReportState extends State<FinancialReport>
                         child: DropdownButton<String>(
                           style: TextStyle(
                               fontSize: width * 0.052,
-                              color: Colors.black,
+                              color: kblack,
                               fontWeight: FontWeight.w500),
                           isExpanded: true,
                           underline: Container(),
@@ -141,16 +142,16 @@ class _FinancialReportState extends State<FinancialReport>
                 SizedBox(
                   width: width * 0.9,
                   child: TabBar(
-                    unselectedLabelStyle: TextStyle(color: Colors.grey),
+                    unselectedLabelStyle: TextStyle(color: kgrey),
                     labelStyle: TextStyle(
                         fontSize: width * 0.052, fontWeight: FontWeight.w500),
                     indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Colors.white,
+                      color: kwhite,
                     ),
                     controller: tabController,
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.black,
+                    labelColor: kblack,
+                    unselectedLabelColor:kblack,
                     tabs: const [
                       Tab(
                         text: 'Overview',
@@ -188,7 +189,7 @@ class _FinancialReportState extends State<FinancialReport>
                                     ),
                                     ColorFiltered(
                                       colorFilter: ColorFilter.mode(
-                                          Colors.black, BlendMode.srcIn),
+                                          kblack, BlendMode.srcIn),
                                       child: Lottie.asset(
                                         'images/noresults.json',
                                         width:
@@ -215,7 +216,7 @@ class _FinancialReportState extends State<FinancialReport>
                                 series: <CircularSeries>[
                                   PieSeries<ChartDatas, String>(
                                     dataLabelSettings: DataLabelSettings(
-                                      color: Color.fromARGB(210, 151, 52, 184),
+                                      color: ktheme,
                                       isVisible: true,
                                       connectorLineSettings:
                                           ConnectorLineSettings(
@@ -250,7 +251,7 @@ class _FinancialReportState extends State<FinancialReport>
                                     ),
                                     ColorFiltered(
                                       colorFilter: ColorFilter.mode(
-                                          Colors.black, BlendMode.srcIn),
+                                          kblack, BlendMode.srcIn),
                                       child: Lottie.asset(
                                         'images/noresults.json',
                                         width:
@@ -277,7 +278,7 @@ class _FinancialReportState extends State<FinancialReport>
                                 series: <CircularSeries>[
                                   PieSeries<ChartDatas, String>(
                                     dataLabelSettings: DataLabelSettings(
-                                      color: Color.fromARGB(210, 151, 52, 184),
+                                      color: ktheme,
                                       isVisible: true,
                                       connectorLineSettings:
                                           ConnectorLineSettings(
@@ -312,7 +313,7 @@ class _FinancialReportState extends State<FinancialReport>
                                     ),
                                     ColorFiltered(
                                       colorFilter: ColorFilter.mode(
-                                          Colors.black, BlendMode.srcIn),
+                                          kblack, BlendMode.srcIn),
                                       child: Lottie.asset(
                                         'images/noresults.json',
                                         width:
@@ -339,7 +340,7 @@ class _FinancialReportState extends State<FinancialReport>
                                 series: <CircularSeries>[
                                   PieSeries<ChartDatas, String>(
                                     dataLabelSettings: DataLabelSettings(
-                                      color: Color.fromARGB(210, 151, 52, 184),
+                                      color: ktheme,
                                       isVisible: true,
                                       connectorLineSettings:
                                           ConnectorLineSettings(

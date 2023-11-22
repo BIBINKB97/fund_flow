@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_Transactions/add_transactions.dart';
 import 'package:fund_flow/view/financial_report/financial_report.dart';
 import 'package:fund_flow/view/home_page/home_page.dart';
@@ -59,10 +60,10 @@ class _BottomNavState extends State<BottomNav> {
         height: 90,
         child: BottomNavigationBar(
           currentIndex: selectedIndex,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: kgrey,
           elevation: 0,
-          selectedItemColor: Color.fromARGB(210, 151, 52, 184),
-          backgroundColor: Colors.black,
+          selectedItemColor: ktheme,
+          backgroundColor: kblack,
           items: _bottomNavbarItems,
           onTap: (index) => setState(() => selectedIndex = index),
         ),

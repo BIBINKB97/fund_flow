@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/category_db/category_db.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_categories/add_category_popup.dart';
 import 'package:fund_flow/view/add_categories/expense_category_list.dart';
 import 'package:fund_flow/view/add_categories/income_category_list.dart';
@@ -30,18 +31,18 @@ class _AddCategoriesState extends State<AddCategories> {
           style: TextStyle(
               fontSize: width * 0.06,
               fontWeight: FontWeight.w600,
-              color: Colors.white),
+              color: kwhite),
         ),
         toolbarHeight: 70,
         elevation: 1,
-        backgroundColor: Color.fromARGB(200, 151, 52, 184),
+        backgroundColor: ktheme,
       ),
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         onPressed: () {
           showCategoryAddPopup(context);
         },
-        backgroundColor: Color.fromARGB(200, 151, 52, 184),
+        backgroundColor: ktheme,
         child: Icon(
           Icons.add,
           size: width * 0.1,
@@ -59,8 +60,8 @@ class _AddCategoriesState extends State<AddCategories> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: const [
-                      Color.fromARGB(200, 151, 52, 184),
-                      Colors.white,
+                      ktheme,
+                      kwhite,
                     ],
                   ),
                 ),
@@ -69,7 +70,7 @@ class _AddCategoriesState extends State<AddCategories> {
                     height: MediaQuery.of(context).size.height * 0.009,
                   ),
                   TabBar(
-                      indicatorColor: Color.fromRGBO(151, 52, 184, 0.784),
+                      indicatorColor: ktheme,
                       tabs: [
                         Tab(
                           child: Text(

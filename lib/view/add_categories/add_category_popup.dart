@@ -1,6 +1,9 @@
+// ignore_for_file: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/category_db/category_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 
 ValueNotifier<CategoryType> selectedCategoryNotifier =
     ValueNotifier(CategoryType.income);
@@ -60,7 +63,7 @@ Future<void> showCategoryAddPopup(BuildContext context) async {
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        Color.fromARGB(200, 151, 52, 184))),
+                        ktheme)),
                 child: Text('Add'),
               ),
             )

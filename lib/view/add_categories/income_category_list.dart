@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/category_db/category_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:lottie/lottie.dart';
 
 class IncomeCategoryList extends StatelessWidget {
@@ -53,7 +54,7 @@ class IncomeCategoryList extends StatelessWidget {
                     ),
                     ColorFiltered(
                       colorFilter:
-                          ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                          ColorFilter.mode(kblack, BlendMode.srcIn),
                       child: Lottie.asset(
                         'images/noresults.json',
                         width: width * 0.3,

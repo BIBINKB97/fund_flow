@@ -4,6 +4,7 @@ import 'package:fund_flow/database/category_db/category_db.dart';
 import 'package:fund_flow/database/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/transaction_list/edit_and_view_details/detailed_view_of_transaction.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
@@ -18,14 +19,14 @@ class TransactionList extends StatefulWidget {
 class _TransactionListState extends State<TransactionList> {
   Icon customIcon = const Icon(
     Icons.search,
-    color: Colors.white,
+    color:  kwhite,
     size: 35,
   );
 
   Widget customSearchBar = const Text(
     "All Transactions",
     style: TextStyle(
-        color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600),
+        color: kwhite, fontSize: 24, fontWeight: FontWeight.w600),
   );
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class _TransactionListState extends State<TransactionList> {
               title: customSearchBar,
               toolbarHeight: 70,
               elevation: 1,
-              backgroundColor: Color.fromARGB(210, 151, 52, 184),
+              backgroundColor: ktheme,
               actions: <Widget>[
                 InkWell(
                   onTap: () {
@@ -49,7 +50,7 @@ class _TransactionListState extends State<TransactionList> {
                       if (customIcon.icon == Icons.search) {
                         customIcon = Icon(
                           Icons.cancel,
-                          color: Colors.white,
+                          color: kwhite,
                         );
                         customSearchBar = TextField(
                           onChanged: (value) {
@@ -65,7 +66,7 @@ class _TransactionListState extends State<TransactionList> {
                             hintText: 'Search',
                           ),
                           style: TextStyle(
-                            color: Colors.white,
+                            color: kwhite,
                             fontWeight: FontWeight.w600,
                             fontSize: 20,
                           ),
@@ -74,12 +75,12 @@ class _TransactionListState extends State<TransactionList> {
                         customIcon = Icon(
                           Icons.search,
                           size: 35,
-                          color: Colors.white,
+                          color: kwhite,
                         );
                         customSearchBar = Text(
                           "All Transactions",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: kwhite,
                               fontSize: 24,
                               fontWeight: FontWeight.w600),
                         );
@@ -100,8 +101,8 @@ class _TransactionListState extends State<TransactionList> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: const [
-                    Color.fromARGB(210, 151, 52, 184),
-                    Colors.white,
+                    ktheme,
+                    kwhite,
                   ],
                 ),
               ),
@@ -112,7 +113,7 @@ class _TransactionListState extends State<TransactionList> {
                     PopupMenuButton(
                       icon: const Icon(
                         Icons.filter_alt,
-                        color: Colors.white,
+                        color: kwhite,
                         size: 30,
                       ),
                       itemBuilder: (context) => [
@@ -145,7 +146,7 @@ class _TransactionListState extends State<TransactionList> {
                     PopupMenuButton(
                       icon: const Icon(
                         Icons.calendar_month_outlined,
-                        color: Colors.white,
+                        color: kwhite,
                         size: 30,
                       ),
                       itemBuilder: (context) => [
@@ -211,7 +212,7 @@ class _TransactionListState extends State<TransactionList> {
                                                   title: Text(
                                                     'Alert !',
                                                     style: TextStyle(
-                                                        color: Colors.red,
+                                                        color: kred,
                                                         fontSize: 20,
                                                         fontWeight:
                                                             FontWeight.w600),
@@ -233,7 +234,7 @@ class _TransactionListState extends State<TransactionList> {
                                                           'No',
                                                           style: TextStyle(
                                                               color:
-                                                                  Colors.blue,
+                                                                kblue,
                                                               fontSize: 19,
                                                               fontWeight:
                                                                   FontWeight
@@ -250,7 +251,7 @@ class _TransactionListState extends State<TransactionList> {
                                                         child: Text(
                                                           'Yes',
                                                           style: TextStyle(
-                                                              color: Colors.red,
+                                                              color: kred,
                                                               fontSize: 19,
                                                               fontWeight:
                                                                   FontWeight
@@ -299,8 +300,8 @@ class _TransactionListState extends State<TransactionList> {
                                           fontWeight: FontWeight.w500,
                                           color:
                                               value.type == CategoryType.income
-                                                  ? Colors.green
-                                                  : Colors.red,
+                                                  ? kgreen
+                                                  : kred,
                                         ),
                                       ),
                                     ),
@@ -325,7 +326,7 @@ class _TransactionListState extends State<TransactionList> {
                               ),
                               ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                    Colors.black, BlendMode.srcIn),
+                                    kblack, BlendMode.srcIn),
                                 child: Lottie.asset(
                                   'images/noresults.json',
                                   width:

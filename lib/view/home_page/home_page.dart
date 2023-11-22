@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/transaction_db/transaction_db.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/home_page/recent_transactions/recent.dart';
 import 'package:fund_flow/view/transaction_list/transaction_list.dart';
@@ -28,8 +29,8 @@ class HomePage extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: const [
-                    Color.fromARGB(250, 151, 52, 184),
-                    Colors.white,
+              ktheme,
+                  kwhite,
                   ],
                 ),
               ),
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.06,
                         fontWeight: FontWeight.w600,
-                        color: Colors.black,
+                        color: kblack,
                       ),
                     ),
                   ),
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
                     indent: 30,
                     endIndent: 30,
                     thickness: 1.5,
-                    color: Colors.black,
+                    color: kblack,
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
@@ -82,7 +83,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.09,
-                                color: Colors.black,
+                                color: kblack,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -103,7 +104,7 @@ class HomePage extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.4,
                           height: MediaQuery.of(context).size.height * 0.1,
                           decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: kgreen,
                             borderRadius: BorderRadius.all(
                               Radius.circular(30),
                             ),
@@ -121,11 +122,11 @@ class HomePage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)),
-                                  color: Colors.white,
+                                  color: kwhite,
                                 ),
                                 child: Icon(
                                   Icons.unarchive,
-                                  color: Colors.green,
+                                  color: kgreen,
                                   size:
                                       MediaQuery.of(context).size.width * 0.11,
                                 ),
@@ -139,7 +140,7 @@ class HomePage extends StatelessWidget {
                                     Text(
                                       'Income',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color:kwhite,
                                         fontSize:
                                             MediaQuery.of(context).size.width *
                                                 0.05,
@@ -164,7 +165,7 @@ class HomePage extends StatelessWidget {
                                                       .size
                                                       .width *
                                                   0.06,
-                                              color: Colors.white,
+                                              color: kwhite,
                                               fontWeight: FontWeight.w600,
                                             ),
                                             overflow: TextOverflow.ellipsis,
@@ -185,7 +186,7 @@ class HomePage extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.4,
                           height: MediaQuery.of(context).size.height * 0.1,
                           decoration: BoxDecoration(
-                            color: Colors.red,
+                            color: kred,
                             borderRadius: BorderRadius.all(
                               Radius.circular(30),
                             ),
@@ -203,11 +204,11 @@ class HomePage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)),
-                                  color: Colors.white,
+                                  color: kwhite,
                                 ),
                                 child: Icon(
                                   Icons.archive,
-                                  color: Colors.red,
+                                  color: kred,
                                   size:
                                       MediaQuery.of(context).size.width * 0.11,
                                 ),
@@ -221,7 +222,7 @@ class HomePage extends StatelessWidget {
                                     Text(
                                       'Expense',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: kwhite,
                                         fontSize:
                                             MediaQuery.of(context).size.width *
                                                 0.05,
@@ -246,7 +247,7 @@ class HomePage extends StatelessWidget {
                                                       .size
                                                       .width *
                                                   0.06,
-                                              color: Colors.white,
+                                              color: kwhite,
                                               fontWeight: FontWeight.w600,
                                             ),
                                             overflow: TextOverflow.ellipsis,
@@ -284,7 +285,7 @@ class HomePage extends StatelessWidget {
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                     side: BorderSide(
-                      color: Color.fromARGB(250, 151, 52, 184),
+                      color: ktheme,
                     ),
                   ),
                 ),
@@ -300,7 +301,7 @@ class HomePage extends StatelessWidget {
               child: Text(
                 'View All',
                 style: TextStyle(
-                  color: Color.fromARGB(210, 151, 52, 184),
+                  color: ktheme,
                   fontSize: MediaQuery.of(context).size.width * 0.05,
                   fontWeight: FontWeight.w600,
                 ),

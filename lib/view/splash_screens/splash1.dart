@@ -1,4 +1,7 @@
+// ignore_for_file: unused_field, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/splash_screens/splash2.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,8 +21,8 @@ class _Splash1State extends State<Splash1> {
     super.initState();
     _checkIfSeenSplash();
   }
-
-  void _checkIfSeenSplash() async {
+ 
+  void _checkIfSeenSplash() async { 
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool hasSeenSplash = prefs.getBool('hasSeenSplash') ?? false;
     setState(() {
@@ -54,11 +57,11 @@ class _Splash1State extends State<Splash1> {
               Container(
                 alignment: Alignment.topCenter,
                 child: Text(
-                  "Bill's Book",
+                  "Fund Flow",
                   style: GoogleFonts.exo(
                     fontSize: appNameFontSize,
                     fontWeight: FontWeight.w800,
-                    color: Color.fromARGB(210, 151, 52, 184),
+                    color: ktheme,
                   ),
                 ),
               ),
@@ -79,7 +82,7 @@ class _Splash1State extends State<Splash1> {
                     text: "Let's\nManage",
                     style: TextStyle(
                       fontSize: headingFontSize,
-                      color: Colors.black,
+                      color: kblack,
                       fontWeight: FontWeight.w500,
                     ),
                     children: <TextSpan>[
@@ -87,7 +90,7 @@ class _Splash1State extends State<Splash1> {
                         text: '\nMoney',
                         style: TextStyle(
                           fontSize: MediaQuery.of(context).size.height * 0.048,
-                          color: Color.fromARGB(210, 151, 52, 184),
+                          color: ktheme,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -95,7 +98,7 @@ class _Splash1State extends State<Splash1> {
                         text: " With Us !",
                         style: TextStyle(
                           fontSize: headingFontSize,
-                          color: Colors.black,
+                          color: kblack,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -111,7 +114,7 @@ class _Splash1State extends State<Splash1> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(25)),
                 ),
-                color: Color.fromARGB(210, 151, 52, 184),
+                color:ktheme,
                 onPressed: () async {
                   _setHasSeenSplash();
                   Navigator.of(context).pushReplacement(
@@ -123,7 +126,7 @@ class _Splash1State extends State<Splash1> {
                   style: TextStyle(
                     fontSize: buttonFontSize,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color: kwhite,
                   ),
                 ),
               ),

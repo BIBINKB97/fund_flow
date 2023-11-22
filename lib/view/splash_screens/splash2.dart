@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/chart_db/chart_db.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,7 +34,7 @@ class _Splash2State extends State<Splash2> {
     final double linearProgressWidth = screenWidth * 0.3;
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kblack,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -54,7 +55,8 @@ class _Splash2State extends State<Splash2> {
                   style: GoogleFonts.exo(
                     fontSize: appNameFontSize,
                     fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                    color: kwhite
+                    ,
                   ),
                 ),
               ),

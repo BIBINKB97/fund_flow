@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/category_db/category_db.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/transaction_list/edit_and_view_details/edit_transaction.dart';
 import 'package:intl/intl.dart';
 
@@ -25,12 +26,12 @@ class TransactionDetails extends StatelessWidget {
           style: TextStyle(
             fontSize: screenWidth * 0.06,
             fontWeight: FontWeight.w600,
-            color: Colors.white,
+            color: kwhite,
           ),
         ),
         toolbarHeight: screenHeight * 0.09,
         elevation: 1,
-        backgroundColor: Color.fromARGB(210, 151, 52, 184),
+        backgroundColor: ktheme,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -46,8 +47,8 @@ class TransactionDetails extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: const [
-                    Color.fromARGB(210, 151, 52, 184),
-                    Colors.white,
+                    ktheme,
+                    kwhite,
                   ],
                 ),
               ),
@@ -73,7 +74,7 @@ class TransactionDetails extends StatelessWidget {
                               child: ListTile(
                                 leading: Icon(
                                   Icons.currency_rupee,
-                                  color: Color.fromARGB(210, 151, 52, 184),
+                                  color: ktheme,
                                   size: screenWidth * 0.075,
                                 ),
                                 title: RichText(
@@ -81,7 +82,7 @@ class TransactionDetails extends StatelessWidget {
                                     text: 'Amount : ',
                                     style: TextStyle(
                                       fontSize: screenWidth * 0.045,
-                                      color: Colors.black,
+                                      color: kblack,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     children: <TextSpan>[
@@ -89,7 +90,7 @@ class TransactionDetails extends StatelessWidget {
                                         text: data.amount.toString(),
                                         style: TextStyle(
                                           color:
-                                              Color.fromARGB(200, 151, 52, 184),
+                                              ktheme,
                                           fontSize: screenWidth * 0.045,
                                         ),
                                       ),
@@ -104,7 +105,7 @@ class TransactionDetails extends StatelessWidget {
                               child: ListTile(
                                 leading: Icon(
                                   Icons.category,
-                                  color: Color.fromARGB(210, 151, 52, 184),
+                                  color: ktheme,
                                   size: screenWidth * 0.075,
                                 ),
                                 title: RichText(
@@ -112,7 +113,7 @@ class TransactionDetails extends StatelessWidget {
                                     text: 'Category: ',
                                     style: TextStyle(
                                       fontSize: screenWidth * 0.045,
-                                      color: Colors.black,
+                                      color: kblack,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     children: <TextSpan>[
@@ -120,7 +121,7 @@ class TransactionDetails extends StatelessWidget {
                                         text: data.category.name,
                                         style: TextStyle(
                                           color:
-                                              Color.fromARGB(200, 151, 52, 184),
+                                             ktheme,
                                           fontSize: screenWidth * 0.045,
                                         ),
                                       ),
@@ -135,7 +136,7 @@ class TransactionDetails extends StatelessWidget {
                               child: ListTile(
                                 leading: Icon(
                                   Icons.note,
-                                  color: Color.fromARGB(210, 151, 52, 184),
+                                  color: ktheme,
                                   size: screenWidth * 0.075,
                                 ),
                                 title: RichText(
@@ -143,7 +144,7 @@ class TransactionDetails extends StatelessWidget {
                                     text: 'Description: ',
                                     style: TextStyle(
                                       fontSize: screenWidth * 0.045,
-                                      color: Colors.black,
+                                      color: kblack,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     children: <TextSpan>[
@@ -151,7 +152,7 @@ class TransactionDetails extends StatelessWidget {
                                         text: data.description,
                                         style: TextStyle(
                                           color:
-                                              Color.fromARGB(200, 151, 52, 184),
+                                              ktheme,
                                           fontSize: screenWidth * 0.045,
                                         ),
                                       ),
@@ -166,7 +167,7 @@ class TransactionDetails extends StatelessWidget {
                               child: ListTile(
                                 leading: Icon(
                                   Icons.date_range,
-                                  color: Color.fromARGB(210, 151, 52, 184),
+                                  color: ktheme,
                                   size: screenWidth * 0.075,
                                 ),
                                 title: RichText(
@@ -174,7 +175,7 @@ class TransactionDetails extends StatelessWidget {
                                     text: 'Date: ',
                                     style: TextStyle(
                                       fontSize: screenWidth * 0.045,
-                                      color: Colors.black,
+                                      color: kblack,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     children: <TextSpan>[
@@ -182,7 +183,7 @@ class TransactionDetails extends StatelessWidget {
                                         text: parseDate(data.date),
                                         style: TextStyle(
                                           color:
-                                              Color.fromARGB(200, 151, 52, 184),
+                                             ktheme,
                                           fontSize: screenWidth * 0.045,
                                         ),
                                       ),
@@ -197,7 +198,7 @@ class TransactionDetails extends StatelessWidget {
                             ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
-                                  Color.fromARGB(200, 151, 52, 184),
+                                  ktheme,
                                 ),
                               ),
                               onPressed: () {

@@ -2,12 +2,15 @@
 
 
 
-// ignore: must_be_immutable
+// ignore_for_file: must_be_immutable
+
+
 import 'package:flutter/material.dart';
 import 'package:fund_flow/database/category_db/category_db.dart';
 import 'package:fund_flow/database/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_categories/add_categories.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:intl/intl.dart';
@@ -54,11 +57,11 @@ class _EditDetailsState extends State<EditDetails> {
           style: TextStyle(
               fontSize: width * 0.06,
               fontWeight: FontWeight.w600,
-              color: Colors.white),
+              color: kwhite),
         ),
         toolbarHeight: 70,
         elevation: 1,
-        backgroundColor: Color.fromARGB(210, 151, 52, 184),
+        backgroundColor: ktheme,
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -72,8 +75,9 @@ class _EditDetailsState extends State<EditDetails> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: const [
-                  Color.fromARGB(210, 151, 52, 184),
-                  Colors.white,
+                  ktheme
+                  ,
+                 kwhite,
                 ],
               ),
             ),
@@ -87,7 +91,7 @@ class _EditDetailsState extends State<EditDetails> {
                     style: TextStyle(
                         fontSize: width * 0.08,
                         fontWeight: FontWeight.w800,
-                        color: Colors.white),
+                        color: kwhite),
                   )),
                   SizedBox(
                     height: height * 0.04,
@@ -105,10 +109,10 @@ class _EditDetailsState extends State<EditDetails> {
                             ),
                             prefixIcon: Icon(
                               Icons.currency_rupee_rounded,
-                              color: Color.fromARGB(210, 151, 52, 184),
+                              color: ktheme,
                               size: width * 0.08,
                             )),
-                        cursorColor: Colors.black,
+                        cursorColor:kblack,
                         keyboardType: TextInputType.number,
                         style: TextStyle(
                             fontSize: width * 0.08,
@@ -137,12 +141,12 @@ class _EditDetailsState extends State<EditDetails> {
                   height: height * 0.070,
                   width: width * 0.35,
                   decoration: BoxDecoration(
-                      color: Colors.green,
+                      color:  kgreen,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Row(
                     children: [
                       Radio(
-                          activeColor: Colors.white,
+                          activeColor: kwhite,
                           value: CategoryType.income,
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {
@@ -154,7 +158,7 @@ class _EditDetailsState extends State<EditDetails> {
                       Text(
                         "Income",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: kwhite,
                             fontSize: width * 0.055,
                             fontWeight: FontWeight.w500),
                       )
@@ -177,12 +181,12 @@ class _EditDetailsState extends State<EditDetails> {
                   height: height * 0.070,
                   width: width * 0.35,
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: kred,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Row(
                     children: [
                       Radio(
-                          activeColor: Colors.white,
+                          activeColor : kwhite,
                           value: CategoryType.expense,
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {
@@ -194,7 +198,7 @@ class _EditDetailsState extends State<EditDetails> {
                       Text(
                         "Expense",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: kwhite,
                             fontSize: width * 0.055,
                             fontWeight: FontWeight.w500),
                       )
@@ -218,7 +222,7 @@ class _EditDetailsState extends State<EditDetails> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kgrey,
                     width: 1.0,
                   ),
                 ),
@@ -271,7 +275,7 @@ class _EditDetailsState extends State<EditDetails> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kgrey,
                     width: 1.2,
                   ),
                 ),
@@ -282,7 +286,7 @@ class _EditDetailsState extends State<EditDetails> {
                       Icon(
                         Icons.playlist_add_circle,
                         size: 25,
-                        color: Color.fromARGB(150, 151, 52, 184),
+                        color: ktheme,
                       ),
                       TextButton(
                           onPressed: () {
@@ -317,7 +321,7 @@ class _EditDetailsState extends State<EditDetails> {
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
-                  cursorColor: Colors.black,
+                  cursorColor: kblack,
                   style: TextStyle(
                       fontSize: width * 0.052, fontWeight: FontWeight.w600),
                 ),
@@ -333,7 +337,7 @@ class _EditDetailsState extends State<EditDetails> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kgrey,
                     width: 1.0,
                   ),
                 ),
@@ -378,7 +382,7 @@ class _EditDetailsState extends State<EditDetails> {
               minWidth: width * 0.4,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8))),
-              color: Color.fromARGB(210, 151, 52, 184),
+              color: ktheme,
               onPressed: () {
                 EditedTansaction();
                 Navigator.of(context).push(MaterialPageRoute(
@@ -390,7 +394,7 @@ class _EditDetailsState extends State<EditDetails> {
                 style: TextStyle(
                     fontSize: width * 0.052,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: kwhite),
               ),
             ),
           ])
@@ -411,7 +415,7 @@ class _EditDetailsState extends State<EditDetails> {
           'Please enter an amount.',
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.width * 0.052,
-            color: Colors.red,
+            color: kred,
           ),
         ))),
       );
@@ -426,7 +430,7 @@ class _EditDetailsState extends State<EditDetails> {
           'Please enter a description.',
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.width * 0.052,
-            color: Colors.red,
+            color: kred,
           ),
         ))),
       );
@@ -440,7 +444,7 @@ class _EditDetailsState extends State<EditDetails> {
           'Please select a date.',
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.width * 0.052,
-            color: Colors.red,
+            color: kred,
           ),
         ))),
       );
@@ -476,7 +480,7 @@ class _EditDetailsState extends State<EditDetails> {
               fontWeight: FontWeight.w600),
           textAlign: TextAlign.center,
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: kgreen,
       ),
     );
   }

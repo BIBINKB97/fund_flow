@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fund_flow/utils/colors.dart';
 
 class IncomeExpenseCard extends StatelessWidget {
   final Color containerColor;
@@ -36,7 +37,7 @@ class IncomeExpenseCard extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.056,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: Colors.white,
+              color: kwhite,
             ),
             child: Icon(
               icon,
@@ -53,7 +54,7 @@ class IncomeExpenseCard extends StatelessWidget {
                 Text(
                   incomeOrExpense,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: kwhite,
                     fontSize: MediaQuery.of(context).size.width * 0.045,
                   ),
                 ),
@@ -64,7 +65,7 @@ class IncomeExpenseCard extends StatelessWidget {
                     amount,
                     style: TextStyle(
                       fontSize: MediaQuery.of(context).size.width * 0.05,
-                      color: Colors.white,
+                      color: kwhite,
                       fontWeight: FontWeight.w500,
                     ),
                     overflow: TextOverflow.ellipsis,

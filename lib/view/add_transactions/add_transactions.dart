@@ -3,6 +3,7 @@ import 'package:fund_flow/database/category_db/category_db.dart';
 import 'package:fund_flow/database/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_categories/add_categories.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:intl/intl.dart';
@@ -48,7 +49,7 @@ class _AddTransactionState extends State<AddTransaction> {
         ),
         toolbarHeight: 70,
         elevation: 1,
-        backgroundColor: Color.fromARGB(210, 151, 52, 184),
+        backgroundColor: ktheme,
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -62,8 +63,8 @@ class _AddTransactionState extends State<AddTransaction> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: const [
-                  Color.fromARGB(210, 151, 52, 184),
-                  Colors.white,
+                  ktheme,
+                kwhite
                 ],
               ),
             ),
@@ -77,7 +78,7 @@ class _AddTransactionState extends State<AddTransaction> {
                     style: TextStyle(
                         fontSize: width * 0.08,
                         fontWeight: FontWeight.w800,
-                        color: Colors.white),
+                        color: kwhite ),
                   )),
                   SizedBox(
                     height: height * 0.045,

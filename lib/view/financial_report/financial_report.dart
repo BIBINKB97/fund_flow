@@ -28,8 +28,7 @@ class _FinancialReportState extends State<FinancialReport>
   List<ChartDatas> incomeweek = chartLogic(incomeLastWeekNotifier.value);
   List<ChartDatas> incomemonth = chartLogic(incomeLastMonthNotifier.value);
   List<ChartDatas> todayExpense = chartLogic(expenseTodayNotifier.value);
-  List<ChartDatas> expenseYesterday =
-      chartLogic(expenseYesterdayNotifier.value);
+  List<ChartDatas> expenseYesterday = chartLogic(expenseYesterdayNotifier.value);
   List<ChartDatas> expenseweek = chartLogic(expenseLastWeekNotifier.value);
   List<ChartDatas> expensemonth = chartLogic(expenseLastMonthNotifier.value);
   late TabController tabController;

@@ -17,7 +17,7 @@ class IncomeCategoryList extends StatelessWidget {
         return newList.isNotEmpty
             ? ListView.separated(
                 itemBuilder: (context, indext) {
-                  final Category = newList[indext];
+                  final category = newList[indext];
 
                   return Card(
                     elevation: 5,
@@ -25,14 +25,14 @@ class IncomeCategoryList extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: ListTile(
                       title: Text(
-                        (Category.name),
+                        (category.name),
                         style: TextStyle(
                             fontSize: width * 0.055,
                             fontWeight: FontWeight.w600),
                       ),
                       trailing: IconButton(
                           onPressed: () {
-                            CategoryDB.instance.deleteCategory(Category.id);
+                            CategoryDB.instance.deleteCategory(category.id);
                           },
                           icon: Icon(Icons.delete)),
                     ),

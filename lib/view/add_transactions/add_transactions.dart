@@ -203,6 +203,44 @@ class _AddTransactionState extends State<AddTransaction> {
                 width: width * 0.415,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
+                  border: Border.all(
+                    color: kgrey,
+                    width: 1.2,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.playlist_add_circle,
+                        size: 25,
+                        color: ktheme,
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => AddCategories()));
+                          },
+                          child: Text(
+                            'Add  Category',
+                            style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: width * 0.052,
+                                fontWeight: FontWeight.w600),
+                          )),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: width * 0.040,
+              ),
+              Container(
+                height: height * 0.075,
+                width: width * 0.415,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(color: kgrey, width: width * 0.0025),
                 ),
                 child: Padding(
@@ -241,44 +279,6 @@ class _AddTransactionState extends State<AddTransaction> {
                         _categoryID = selectedValue;
                       });
                     },
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: width * 0.040,
-              ),
-              Container(
-                height: height * 0.075,
-                width: width * 0.415,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(
-                    color: kgrey,
-                    width: 1.2,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.playlist_add_circle,
-                        size: 25,
-                        color: ktheme,
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => AddCategories()));
-                          },
-                          child: Text(
-                            'Add  Category',
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontSize: width * 0.052,
-                                fontWeight: FontWeight.w600),
-                          )),
-                    ],
                   ),
                 ),
               ),

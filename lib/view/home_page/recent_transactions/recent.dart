@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/transaction_db/transaction_db.dart';
+import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
@@ -107,7 +107,7 @@ class _RecentState extends State<Recent> {
                         Text(
                           "  No transactions yet !",
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 22,
                             color: kgrey,
                           ),
                         ),

@@ -6,8 +6,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/category_db/category_db.dart';
-import 'package:fund_flow/database/transaction_db/transaction_db.dart';
+import 'package:fund_flow/controller/category_db/category_db.dart';
+import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';

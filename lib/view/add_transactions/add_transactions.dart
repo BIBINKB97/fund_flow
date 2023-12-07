@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/category_db/category_db.dart';
-import 'package:fund_flow/database/transaction_db/transaction_db.dart';
+import 'package:fund_flow/controller/category_db/category_db.dart';
+import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
@@ -96,10 +96,10 @@ class _AddTransactionState extends State<AddTransaction> {
                             ),
                             prefixIcon: Icon(
                               Icons.currency_rupee_rounded,
-                              color: Color.fromARGB(210, 151, 52, 184),
+                              color: ktheme,
                               size: width * 0.075,
                             )),
-                        cursorColor: Colors.black,
+                        cursorColor: kblack,
                         keyboardType: TextInputType.number,
                         style: TextStyle(
                             fontSize: width * 0.075,
@@ -127,12 +127,12 @@ class _AddTransactionState extends State<AddTransaction> {
                   height: height * 0.070,
                   width: width * 0.35,
                   decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: kgreen,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Row(
                     children: [
                       Radio(
-                          activeColor: Colors.white,
+                          activeColor: kwhite,
                           value: CategoryType.income,
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {
@@ -144,7 +144,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       Text(
                         "Income",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: kwhite,
                             fontSize: width * 0.055,
                             fontWeight: FontWeight.w500),
                       )
@@ -166,12 +166,12 @@ class _AddTransactionState extends State<AddTransaction> {
                   height: height * 0.070,
                   width: width * 0.35,
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: kred,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Row(
                     children: [
                       Radio(
-                          activeColor: Colors.white,
+                          activeColor: kwhite,
                           value: CategoryType.expense,
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {
@@ -183,7 +183,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       Text(
                         "Expense",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: kwhite,
                             fontSize: width * 0.055,
                             fontWeight: FontWeight.w500),
                       )
@@ -206,7 +206,7 @@ class _AddTransactionState extends State<AddTransaction> {
                 width: width * 0.415,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(color: Colors.grey, width: width * 0.0025),
+                  border: Border.all(color: kgrey, width: width * 0.0025),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -256,7 +256,7 @@ class _AddTransactionState extends State<AddTransaction> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kgrey,
                     width: 1.2,
                   ),
                 ),
@@ -267,7 +267,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       Icon(
                         Icons.playlist_add_circle,
                         size: 25,
-                        color: Color.fromARGB(150, 151, 52, 184),
+                        color: ktheme,
                       ),
                       TextButton(
                           onPressed: () {
@@ -302,7 +302,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
                   ),
-                  cursorColor: Colors.black,
+                  cursorColor: kblack,
                   style: TextStyle(
                       fontSize: width * 0.052, fontWeight: FontWeight.w600),
                 ),
@@ -318,7 +318,7 @@ class _AddTransactionState extends State<AddTransaction> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: kgrey,
                     width: 1.0,
                   ),
                 ),
@@ -363,7 +363,7 @@ class _AddTransactionState extends State<AddTransaction> {
               minWidth: width * 0.4,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8))),
-              color: Color.fromARGB(210, 151, 52, 184),
+              color: ktheme,
               onPressed: () {
                 addTransaction();
               },
@@ -372,7 +372,7 @@ class _AddTransactionState extends State<AddTransaction> {
                 style: TextStyle(
                     fontSize: width * 0.052,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: kwhite),
               ),
             ),
           ])
@@ -392,7 +392,7 @@ class _AddTransactionState extends State<AddTransaction> {
           'Please enter an amount.',
           style: TextStyle(
             fontSize: 22,
-            color: Colors.red,
+            color:kred,
           ),
         ))),
       );
@@ -406,7 +406,7 @@ class _AddTransactionState extends State<AddTransaction> {
           'Please select a category.',
           style: TextStyle(
             fontSize: 22,
-            color: Colors.red,
+            color: kred,
           ),
         ))),
       );
@@ -420,7 +420,7 @@ class _AddTransactionState extends State<AddTransaction> {
           'Please enter a description.',
           style: TextStyle(
             fontSize: 22,
-            color: Colors.red,
+            color: kred,
           ),
         ))),
       );
@@ -438,7 +438,7 @@ class _AddTransactionState extends State<AddTransaction> {
           'Please select a date.',
           style: TextStyle(
             fontSize: 22,
-            color: Colors.red,
+            color: kred,
           ),
         ))),
       );
@@ -453,7 +453,7 @@ class _AddTransactionState extends State<AddTransaction> {
           'Please enter a valid amount.',
           style: TextStyle(
             fontSize: 22,
-            color: Colors.red,
+            color: kred,
           ),
         )),
       );
@@ -483,7 +483,7 @@ class _AddTransactionState extends State<AddTransaction> {
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
           textAlign: TextAlign.center,
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: kgreen,
       ),
     );
   }

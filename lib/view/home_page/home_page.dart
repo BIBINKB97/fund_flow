@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/transaction_db/transaction_db.dart';
+import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/home_page/recent_transactions/recent.dart';
@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: const [
-              ktheme,
-                  kwhite,
+                    ktheme,
+                    kwhite,
                   ],
                 ),
               ),
@@ -45,8 +45,7 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       DateFormat('EEEE d\nMMMM').format(DateTime.now()),
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.06,
-                        fontWeight: FontWeight.w600,
+                        fontSize: MediaQuery.of(context).size.width * 0.05,
                         color: kblack,
                       ),
                     ),
@@ -54,7 +53,7 @@ class HomePage extends StatelessWidget {
                   Divider(
                     indent: 30,
                     endIndent: 30,
-                    thickness: 1.5,
+                    thickness: 1,
                     color: kblack,
                   ),
                   SizedBox(
@@ -71,7 +70,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.07,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                             SizedBox(
@@ -84,7 +83,7 @@ class HomePage extends StatelessWidget {
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.09,
                                 color: kblack,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
@@ -140,7 +139,7 @@ class HomePage extends StatelessWidget {
                                     Text(
                                       'Income',
                                       style: TextStyle(
-                                        color:kwhite,
+                                        color: kwhite,
                                         fontSize:
                                             MediaQuery.of(context).size.width *
                                                 0.05,

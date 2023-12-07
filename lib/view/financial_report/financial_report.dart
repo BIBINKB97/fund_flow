@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/chart_db/chart_db.dart';
+import 'package:fund_flow/controller/chart_db/chart_db.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/financial_report/model.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';

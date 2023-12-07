@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/category_db/category_db.dart';
+import 'package:fund_flow/controller/category_db/category_db.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_categories/add_category_popup.dart';
 import 'package:fund_flow/view/add_categories/expense_category_list.dart';

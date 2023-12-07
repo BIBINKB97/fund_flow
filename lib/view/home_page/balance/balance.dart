@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/transaction_db/transaction_db.dart';
+import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 
 ValueNotifier<double> incomeNotifier = ValueNotifier(0);

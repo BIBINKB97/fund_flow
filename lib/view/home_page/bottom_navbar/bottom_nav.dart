@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_Transactions/add_transactions.dart';
-import 'package:fund_flow/view/financial_report/financial_report.dart';
+import 'package:fund_flow/view/statitics/statitics.dart';
 import 'package:fund_flow/view/home_page/home_page.dart';
-import 'package:fund_flow/view/transaction_list/transaction_list.dart';
+import 'package:fund_flow/view/all_transactions.dart/all_transactions.dart';
 import 'package:iconly/iconly.dart';
 
 class BottomNav extends StatefulWidget {
@@ -19,7 +19,7 @@ class _BottomNavState extends State<BottomNav> {
     HomePage(),
     TransactionList(),
     AddTransaction(),
-    FinancialReport(),
+    Statitics(),
   ];
   final List<BottomNavigationBarItem> _bottomNavbarItems = [
     BottomNavigationBarItem(

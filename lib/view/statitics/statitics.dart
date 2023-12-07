@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/chart_db/chart_db.dart';
 import 'package:fund_flow/utils/colors.dart';
-import 'package:fund_flow/view/financial_report/model.dart';
+import 'package:fund_flow/view/statitics/model.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:lottie/lottie.dart';
 
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class FinancialReport extends StatefulWidget {
-  const FinancialReport({Key? key}) : super(key: key);
+class Statitics extends StatefulWidget {
+  const Statitics({Key? key}) : super(key: key);
 
   @override
-  State<FinancialReport> createState() => _FinancialReportState();
+  State<Statitics> createState() => _StatiticsState();
 }
 
-class _FinancialReportState extends State<FinancialReport>
-    with TickerProviderStateMixin {
+class _StatiticsState extends State<Statitics> with TickerProviderStateMixin {
   List<ChartDatas> dataExpense = chartLogic(expenseNotifier1.value);
   List<ChartDatas> dataIncome = chartLogic(incomeNotifier1.value);
   List<ChartDatas> overview = chartLogic(overviewNotifier.value);
@@ -28,7 +27,8 @@ class _FinancialReportState extends State<FinancialReport>
   List<ChartDatas> incomeweek = chartLogic(incomeLastWeekNotifier.value);
   List<ChartDatas> incomemonth = chartLogic(incomeLastMonthNotifier.value);
   List<ChartDatas> todayExpense = chartLogic(expenseTodayNotifier.value);
-  List<ChartDatas> expenseYesterday = chartLogic(expenseYesterdayNotifier.value);
+  List<ChartDatas> expenseYesterday =
+      chartLogic(expenseYesterdayNotifier.value);
   List<ChartDatas> expenseweek = chartLogic(expenseLastWeekNotifier.value);
   List<ChartDatas> expensemonth = chartLogic(expenseLastMonthNotifier.value);
   late TabController tabController;
@@ -62,7 +62,7 @@ class _FinancialReportState extends State<FinancialReport>
         ),
         toolbarHeight: 70,
         elevation: 1,
-        backgroundColor:ktheme,
+        backgroundColor: ktheme,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -150,7 +150,7 @@ class _FinancialReportState extends State<FinancialReport>
                     ),
                     controller: tabController,
                     labelColor: kblack,
-                    unselectedLabelColor:kblack,
+                    unselectedLabelColor: kblack,
                     tabs: const [
                       Tab(
                         text: 'Overview',

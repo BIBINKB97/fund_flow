@@ -3,7 +3,7 @@ import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/home_page/recent_transactions/recent.dart';
-import 'package:fund_flow/view/transaction_list/transaction_list.dart';
+import 'package:fund_flow/view/all_transactions.dart/all_transactions.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatelessWidget {

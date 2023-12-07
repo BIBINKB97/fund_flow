@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:fund_flow/database/chart_db/chart_db.dart';
+import 'package:fund_flow/controller/chart_db/chart_db.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:google_fonts/google_fonts.dart';

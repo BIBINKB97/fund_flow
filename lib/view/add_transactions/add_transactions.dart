@@ -62,10 +62,7 @@ class _AddTransactionState extends State<AddTransaction> {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: const [
-                  ktheme,
-                kwhite
-                ],
+                colors: const [ktheme, kwhite],
               ),
             ),
             child: SafeArea(
@@ -77,8 +74,8 @@ class _AddTransactionState extends State<AddTransaction> {
                     'Enter Amount',
                     style: TextStyle(
                         fontSize: width * 0.08,
-                        fontWeight: FontWeight.w800,
-                        color: kwhite ),
+                        fontWeight: FontWeight.w500,
+                        color: kwhite),
                   )),
                   SizedBox(
                     height: height * 0.045,
@@ -103,7 +100,7 @@ class _AddTransactionState extends State<AddTransaction> {
                         keyboardType: TextInputType.number,
                         style: TextStyle(
                             fontSize: width * 0.075,
-                            fontWeight: FontWeight.w700),
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -392,7 +389,7 @@ class _AddTransactionState extends State<AddTransaction> {
           'Please enter an amount.',
           style: TextStyle(
             fontSize: 22,
-            color:kred,
+            color: kred,
           ),
         ))),
       );

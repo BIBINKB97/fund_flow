@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fund_flow/common_widgets/nothing_to_show.dart';
 import 'package:fund_flow/controller/chart_db/chart_db.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/statitics/model.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
-import 'package:lottie/lottie.dart';
 
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -108,8 +108,8 @@ class _StatiticsState extends State<Statitics> with TickerProviderStateMixin {
                         ),
                         child: DropdownButton<String>(
                           style: TextStyle(
-                              fontSize: width * 0.052,
-                              color: kblack,
+                              fontSize: width * 0.050,
+                              color: kblack54,
                               fontWeight: FontWeight.w500),
                           isExpanded: true,
                           underline: Container(),
@@ -141,16 +141,15 @@ class _StatiticsState extends State<Statitics> with TickerProviderStateMixin {
                 SizedBox(
                   width: width * 0.9,
                   child: TabBar(
-                    unselectedLabelStyle: TextStyle(color: kgrey),
                     labelStyle: TextStyle(
-                        fontSize: width * 0.052, fontWeight: FontWeight.w500),
+                        fontSize: width * 0.050, fontWeight: FontWeight.w500),
                     indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: kwhite,
                     ),
                     controller: tabController,
-                    labelColor: kblack,
-                    unselectedLabelColor: kblack,
+                    labelColor: kblack54,
+                    unselectedLabelColor: kblack54,
                     tabs: const [
                       Tab(
                         text: 'Overview',
@@ -178,34 +177,7 @@ class _StatiticsState extends State<Statitics> with TickerProviderStateMixin {
                           16,
                         ),
                         child: chartdivertFunctionOverview().isEmpty
-                            ? Center(
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.1,
-                                    ),
-                                    ColorFiltered(
-                                      colorFilter: ColorFilter.mode(
-                                          kblack, BlendMode.srcIn),
-                                      child: Lottie.asset(
-                                        'images/noresults.json',
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.3,
-                                      ),
-                                    ),
-                                    Text(
-                                      "   No transactions yet !",
-                                      style: TextStyle(
-                                        fontSize: width * 0.055,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
+                            ? NothingToShow(color: kblack54)
                             : SfCircularChart(
                                 legend: Legend(
                                   isVisible: true,
@@ -240,34 +212,7 @@ class _StatiticsState extends State<Statitics> with TickerProviderStateMixin {
                           16,
                         ),
                         child: chartdivertFunctionIncome().isEmpty
-                            ? Center(
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.1,
-                                    ),
-                                    ColorFiltered(
-                                      colorFilter: ColorFilter.mode(
-                                          kblack, BlendMode.srcIn),
-                                      child: Lottie.asset(
-                                        'images/noresults.json',
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.3,
-                                      ),
-                                    ),
-                                    Text(
-                                      "   No transactions yet !",
-                                      style: TextStyle(
-                                        fontSize: width * 0.055,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
+                            ? NothingToShow(color: kblack54)
                             : SfCircularChart(
                                 legend: Legend(
                                   isVisible: true,
@@ -302,34 +247,7 @@ class _StatiticsState extends State<Statitics> with TickerProviderStateMixin {
                           16,
                         ),
                         child: chartdivertFunctionExpense().isEmpty
-                            ? Center(
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.1,
-                                    ),
-                                    ColorFiltered(
-                                      colorFilter: ColorFilter.mode(
-                                          kblack, BlendMode.srcIn),
-                                      child: Lottie.asset(
-                                        'images/noresults.json',
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.3,
-                                      ),
-                                    ),
-                                    Text(
-                                      "   No transactions yet !",
-                                      style: TextStyle(
-                                        fontSize: width * 0.055,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
+                            ? NothingToShow(color: kblack54)
                             : SfCircularChart(
                                 legend: Legend(
                                   isVisible: true,

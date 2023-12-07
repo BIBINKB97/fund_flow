@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const kwhite = Colors.white;
 const kblack = Colors.black;
+const kblack54 = Colors.black54;
 const ktheme = Color.fromARGB(210, 151, 52, 184);
 const kred = Colors.red;
 const kgreen = Colors.green;

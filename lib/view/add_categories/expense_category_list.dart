@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/category_db/category_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
-import 'package:fund_flow/utils/colors.dart';
-import 'package:lottie/lottie.dart';
+import 'package:fund_flow/view/add_categories/widgets/no_categories_added_yet.dart';
 
 class ExpenseCategoryList extends StatelessWidget {
   const ExpenseCategoryList({super.key});
@@ -45,31 +43,7 @@ class ExpenseCategoryList extends StatelessWidget {
                 },
                 itemCount: newList.length,
               )
-            : Center(
-                child: Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: height * 0.15,
-                    ),
-                    ColorFiltered(
-                      colorFilter:
-                          ColorFilter.mode(kblack, BlendMode.srcIn),
-                      child: Lottie.asset(
-                        'images/noresults.json',
-                        width: width * 0.3,
-                      ),
-                    ),
-                    Text(
-                      "   No categories added yet !",
-                      style: TextStyle(
-                        fontSize: width * 0.07,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ],
-                ),
-              ));
+            : NoCategories();
       },
     );
   }

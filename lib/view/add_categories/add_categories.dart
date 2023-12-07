@@ -45,7 +45,7 @@ class _AddCategoriesState extends State<AddCategories> {
         backgroundColor: ktheme,
         child: Icon(
           Icons.add,
-          size: width * 0.1,
+          size: width * 0.07,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -69,26 +69,27 @@ class _AddCategoriesState extends State<AddCategories> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.009,
                   ),
-                  TabBar(
-                      indicatorColor: ktheme,
-                      tabs: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    child: TabBar(
+                      labelStyle: TextStyle(
+                          fontSize: width * 0.050, fontWeight: FontWeight.w500),
+                      indicator: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: kwhite,
+                      ),
+                      labelColor: kblack54,
+                      unselectedLabelColor: kblack54,
+                      tabs: const [
                         Tab(
-                          child: Text(
-                            'Income',
-                            style: TextStyle(
-                                fontSize: width * 0.055,
-                                fontWeight: FontWeight.w500),
-                          ),
+                          text: 'Income',
                         ),
                         Tab(
-                          child: Text(
-                            'Expense',
-                            style: TextStyle(
-                                fontSize: width * 0.055,
-                                fontWeight: FontWeight.w500),
-                          ),
+                          text: 'Expense',
                         ),
-                      ]),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.9 -
                         kToolbarHeight,

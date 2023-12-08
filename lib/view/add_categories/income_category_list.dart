@@ -33,7 +33,55 @@ class IncomeCategoryList extends StatelessWidget {
                           ),
                           IconButton(
                               onPressed: () {
-                                CategoryDB.instance.deleteCategory(category.id);
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: Text(
+                                          'Alert !',
+                                          style: TextStyle(
+                                              color: kred,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        content: Text(
+                                          'Do you want to delete this category ?',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                'No',
+                                                style: TextStyle(
+                                                    color: kblue,
+                                                    fontSize: 19,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              )),
+                                          TextButton(
+                                              onPressed: () {
+                                                CategoryDB.instance
+                                                    .deleteCategory(
+                                                        category.id);
+
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                'Yes',
+                                                style: TextStyle(
+                                                    color: kred,
+                                                    fontSize: 19,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ))
+                                        ],
+                                      );
+                                    });
                               },
                               icon: CircleAvatar(
                                 backgroundColor: kblack54,

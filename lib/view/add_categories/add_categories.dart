@@ -50,6 +50,7 @@ class _AddCategoriesState extends State<AddCategories> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: SingleChildScrollView(
         child: DefaultTabController(
+          initialIndex: 0,
           length: 2,
           child: Column(children: [
             Container(
@@ -74,6 +75,7 @@ class _AddCategoriesState extends State<AddCategories> {
                         borderRadius: BorderRadius.circular(25)),
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     child: TabBar(
+                      
                       labelStyle: TextStyle(
                           fontSize: width * 0.050, fontWeight: FontWeight.w500),
                       indicator: BoxDecoration(

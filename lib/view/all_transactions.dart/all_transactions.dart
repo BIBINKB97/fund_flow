@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fund_flow/common_widgets/nothing_to_show.dart';
@@ -198,113 +199,118 @@ class _TransactionListState extends State<TransactionList> {
                               final value = newList[index];
                               return Stack(
                                 children: [
-                                  Slidable(
-                                    key: Key(value.id.toString()),
-                                    startActionPane: ActionPane(
-                                      motion: ScrollMotion(),
-                                      children: [
-                                        SlidableAction(
-                                          backgroundColor: Colors.transparent,
-                                          onPressed: (ctx) {
-                                            showDialog(
-                                                context: context,
-                                                builder: (context) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                      'Alert !',
-                                                      style: TextStyle(
-                                                          color: kred,
-                                                          fontSize: 20,
-                                                          fontWeight:
-                                                              FontWeight.w600),
-                                                    ),
-                                                    content: Text(
-                                                      'Do you want to delete this transaction?',
-                                                      style: TextStyle(
-                                                          fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.w600),
-                                                    ),
-                                                    actions: [
-                                                      TextButton(
-                                                          onPressed: () {
-                                                            Navigator.of(
-                                                                    context)
-                                                                .pop();
-                                                          },
-                                                          child: Text(
-                                                            'No',
-                                                            style: TextStyle(
-                                                                color: kblue,
-                                                                fontSize: 19,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          )),
-                                                      TextButton(
-                                                          onPressed: () {
-                                                            transactionDB
-                                                                .instance
-                                                                .deleteTransaction(
-                                                                    value.id!);
-                                                            Navigator.of(
-                                                                    context)
-                                                                .pop();
-                                                          },
-                                                          child: Text(
-                                                            'Yes',
-                                                            style: TextStyle(
-                                                                color: kred,
-                                                                fontSize: 19,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ))
-                                                    ],
-                                                  );
-                                                });
+                                  SlideInUp(
+                                    child: Slidable(
+                                      key: Key(value.id.toString()),
+                                      startActionPane: ActionPane(
+                                        motion: ScrollMotion(),
+                                        children: [
+                                          SlidableAction(
+                                            backgroundColor: Colors.transparent,
+                                            onPressed: (ctx) {
+                                              showDialog(
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return AlertDialog(
+                                                      title: Text(
+                                                        'Alert !',
+                                                        style: TextStyle(
+                                                            color: kred,
+                                                            fontSize: 20,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                      content: Text(
+                                                        'Do you want to delete this transaction?',
+                                                        style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                      actions: [
+                                                        TextButton(
+                                                            onPressed: () {
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: Text(
+                                                              'No',
+                                                              style: TextStyle(
+                                                                  color: kblue,
+                                                                  fontSize: 19,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
+                                                            )),
+                                                        TextButton(
+                                                            onPressed: () {
+                                                              transactionDB
+                                                                  .instance
+                                                                  .deleteTransaction(
+                                                                      value
+                                                                          .id!);
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: Text(
+                                                              'Yes',
+                                                              style: TextStyle(
+                                                                  color: kred,
+                                                                  fontSize: 19,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
+                                                            ))
+                                                      ],
+                                                    );
+                                                  });
+                                            },
+                                            icon: Icons.delete,
+                                            label: 'Delete',
+                                          )
+                                        ],
+                                      ),
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20))),
+                                        child: ListTile(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        TransactionDetails(
+                                                          data: value,
+                                                        )));
                                           },
-                                          icon: Icons.delete,
-                                          label: 'Delete',
-                                        )
-                                      ],
-                                    ),
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
-                                      child: ListTile(
-                                        onTap: () {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      TransactionDetails(
-                                                        data: value,
-                                                      )));
-                                        },
-                                        title: Text(
-                                          value.category.name,
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w500,
+                                          title: Text(
+                                            value.category.name,
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                           ),
-                                        ),
-                                        subtitle: Text(
-                                          parseDate(value.date),
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w600,
+                                          subtitle: Text(
+                                            parseDate(value.date),
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                           ),
-                                        ),
-                                        trailing: Text(
-                                          "₹ ${value.amount}",
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w500,
-                                            color: value.type ==
-                                                    CategoryType.income
-                                                ? kgreen
-                                                : kred,
+                                          trailing: Text(
+                                            "₹ ${value.amount}",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                              color: value.type ==
+                                                      CategoryType.income
+                                                  ? kgreen
+                                                  : kred,
+                                            ),
                                           ),
                                         ),
                                       ),

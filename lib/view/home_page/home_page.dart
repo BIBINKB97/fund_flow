@@ -4,6 +4,7 @@ import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/home_page/recent_transactions/recent.dart';
 import 'package:fund_flow/view/all_transactions.dart/all_transactions.dart';
+import 'package:fund_flow/view/home_page/widgets/inc_exp_cards.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatelessWidget {
@@ -99,167 +100,21 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          decoration: BoxDecoration(
-                            color: kgreen,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(30),
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.029,
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.056,
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)),
-                                  color: kwhite,
-                                ),
-                                child: Icon(
-                                  Icons.unarchive,
-                                  color: kgreen,
-                                  size:
-                                      MediaQuery.of(context).size.width * 0.11,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 8),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Income',
-                                      style: TextStyle(
-                                        color: kwhite,
-                                        fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.05,
-                                      ),
-                                    ),
-                                    ValueListenableBuilder(
-                                      valueListenable: incomeNotifier,
-                                      builder: (context, value, child) {
-                                        return SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.23,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.025,
-                                          child: Text(
-                                            '₹${incomeNotifier.value.toString()}',
-                                            style: TextStyle(
-                                              fontSize: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.06,
-                                              color: kwhite,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        IncomeExpenseCard(
+                            containerColor: kgreen,
+                            iconColor: kgreen,
+                            incomeOrExpense: "Income",
+                            icon: Icons.unarchive,
+                            amount: '₹${incomeNotifier.value.toString()}'),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.06,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          decoration: BoxDecoration(
-                            color: kred,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(30),
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.029,
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.056,
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)),
-                                  color: kwhite,
-                                ),
-                                child: Icon(
-                                  Icons.archive,
-                                  color: kred,
-                                  size:
-                                      MediaQuery.of(context).size.width * 0.11,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 8),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Expense',
-                                      style: TextStyle(
-                                        color: kwhite,
-                                        fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.05,
-                                      ),
-                                    ),
-                                    ValueListenableBuilder(
-                                      valueListenable: expenseNotifier,
-                                      builder: (context, value, child) {
-                                        return SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.23,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.025,
-                                          child: Text(
-                                            '₹${expenseNotifier.value.toString()}',
-                                            style: TextStyle(
-                                              fontSize: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.06,
-                                              color: kwhite,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        IncomeExpenseCard(
+                            containerColor: kred,
+                            iconColor: kred,
+                            incomeOrExpense: "Expense",
+                            icon: Icons.archive,
+                            amount: '₹${expenseNotifier.value.toString()}'),
                       ],
                     ),
                   ),

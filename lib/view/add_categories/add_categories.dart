@@ -38,7 +38,6 @@ class _AddCategoriesState extends State<AddCategories> {
         backgroundColor: ktheme,
       ),
       floatingActionButton: FloatingActionButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         onPressed: () {
           showCategoryAddPopup(context);
         },
@@ -48,7 +47,7 @@ class _AddCategoriesState extends State<AddCategories> {
           size: width * 0.07,
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: SingleChildScrollView(
         child: DefaultTabController(
           length: 2,
@@ -70,16 +69,19 @@ class _AddCategoriesState extends State<AddCategories> {
                     height: MediaQuery.of(context).size.height * 0.009,
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                        color: kblack54,
+                        borderRadius: BorderRadius.circular(25)),
+                    margin: EdgeInsets.symmetric(horizontal: 10),
                     child: TabBar(
                       labelStyle: TextStyle(
                           fontSize: width * 0.050, fontWeight: FontWeight.w500),
                       indicator: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(25),
                         color: kwhite,
                       ),
                       labelColor: kblack54,
-                      unselectedLabelColor: kblack54,
+                      unselectedLabelColor: Colors.white70,
                       tabs: const [
                         Tab(
                           text: 'Income',

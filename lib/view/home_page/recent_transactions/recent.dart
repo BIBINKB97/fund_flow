@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:fund_flow/common_widgets/nothing_to_show.dart';
 import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
@@ -27,56 +28,60 @@ class _RecentState extends State<Recent> {
                   padding: const EdgeInsets.all(10),
                   itemBuilder: (context, index) {
                     final value = newList[index];
-                    return Card(
-                      elevation: 0,
-                      color: Color.fromARGB(255, 233, 233, 233),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => TransactionDetails(
-                                    data: value,
-                                  )));
-                        },
-                        leading: CircleAvatar(
-                          radius: 25,
-                          backgroundColor:
-                              value.type == CategoryType.income ? kgreen : kred,
-                          child: value.type == CategoryType.income
-                              ? Icon(
-                                  Icons.arrow_upward,
-                                  size: 28,
-                                  color: kwhite,
-                                )
-                              : Icon(
-                                  Icons.arrow_downward,
-                                  size: 28,
-                                  color: kwhite,
-                                ),
-                        ),
-                        title: Text(
-                          value.category.name,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        subtitle: Text(
-                          parseDate(value.date),
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        trailing: Text(
-                          "₹ ${value.amount}",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                            color: value.type == CategoryType.income
+                    return SlideInUp(
+                      child: Card(
+                        elevation: 0,
+                        color: Color.fromARGB(255, 233, 233, 233),
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: ListTile(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => TransactionDetails(
+                                      data: value,
+                                    )));
+                          },
+                          leading: CircleAvatar(
+                            radius: 25,
+                            backgroundColor: value.type == CategoryType.income
                                 ? kgreen
                                 : kred,
+                            child: value.type == CategoryType.income
+                                ? Icon(
+                                    Icons.arrow_upward,
+                                    size: 28,
+                                    color: kwhite,
+                                  )
+                                : Icon(
+                                    Icons.arrow_downward,
+                                    size: 28,
+                                    color: kwhite,
+                                  ),
+                          ),
+                          title: Text(
+                            value.category.name,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          subtitle: Text(
+                            parseDate(value.date),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          trailing: Text(
+                            "₹ ${value.amount}",
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w500,
+                              color: value.type == CategoryType.income
+                                  ? kgreen
+                                  : kred,
+                            ),
                           ),
                         ),
                       ),

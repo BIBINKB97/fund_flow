@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/utils/colors.dart';
@@ -100,21 +101,25 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        IncomeExpenseCard(
-                            containerColor: kgreen,
-                            iconColor: kgreen,
-                            incomeOrExpense: "Income",
-                            icon: Icons.unarchive,
-                            amount: '₹${incomeNotifier.value.toString()}'),
+                        SlideInLeft(
+                          child: IncomeExpenseCard(
+                              containerColor: kgreen,
+                              iconColor: kgreen,
+                              incomeOrExpense: "Income",
+                              icon: Icons.unarchive,
+                              amount: '₹${incomeNotifier.value.toString()}'),
+                        ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.06,
                         ),
-                        IncomeExpenseCard(
-                            containerColor: kred,
-                            iconColor: kred,
-                            incomeOrExpense: "Expense",
-                            icon: Icons.archive,
-                            amount: '₹${expenseNotifier.value.toString()}'),
+                        SlideInRight(
+                          child: IncomeExpenseCard(
+                              containerColor: kred,
+                              iconColor: kred,
+                              incomeOrExpense: "Expense",
+                              icon: Icons.archive,
+                              amount: '₹${expenseNotifier.value.toString()}'),
+                        ),
                       ],
                     ),
                   ),

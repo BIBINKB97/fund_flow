@@ -200,6 +200,7 @@ class _TransactionListState extends State<TransactionList> {
                               return Stack(
                                 children: [
                                   SlideInUp(
+                                    duration: Duration(milliseconds: 400),
                                     child: Slidable(
                                       key: Key(value.id.toString()),
                                       startActionPane: ActionPane(

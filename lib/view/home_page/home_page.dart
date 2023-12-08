@@ -102,6 +102,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SlideInLeft(
+                          duration: Duration(milliseconds: 400),
                           child: IncomeExpenseCard(
                               containerColor: kgreen,
                               iconColor: kgreen,
@@ -113,6 +114,7 @@ class HomePage extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.06,
                         ),
                         SlideInRight(
+                          duration: Duration(milliseconds: 400),
                           child: IncomeExpenseCard(
                               containerColor: kred,
                               iconColor: kred,

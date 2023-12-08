@@ -29,6 +29,7 @@ class _RecentState extends State<Recent> {
                   itemBuilder: (context, index) {
                     final value = newList[index];
                     return SlideInUp(
+                      duration: Duration(milliseconds: 400),
                       child: Card(
                         elevation: 0,
                         color: Color.fromARGB(255, 233, 233, 233),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_Transactions/add_transactions.dart';
+import 'package:fund_flow/view/settings/settings.dart';
 import 'package:fund_flow/view/statitics/statitics.dart';
 import 'package:fund_flow/view/home_page/home_page.dart';
 import 'package:fund_flow/view/all_transactions.dart/all_transactions.dart';
@@ -20,6 +21,7 @@ class _BottomNavState extends State<BottomNav> {
     TransactionList(),
     AddTransaction(),
     Statitics(),
+    Settings(),
   ];
   final List<BottomNavigationBarItem> _bottomNavbarItems = [
     BottomNavigationBarItem(
@@ -32,14 +34,14 @@ class _BottomNavState extends State<BottomNav> {
     BottomNavigationBarItem(
       icon: Icon(
         Icons.compare_arrows,
-        size: 37,
+        size: 36,
       ),
       label: 'Transactions',
     ),
     BottomNavigationBarItem(
       icon: Icon(
         IconlyBold.plus,
-        size: 32,
+        size: 30,
       ),
       label: 'Add Transaction',
     ),
@@ -49,6 +51,13 @@ class _BottomNavState extends State<BottomNav> {
         size: 30,
       ),
       label: 'Statitics',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(
+        IconlyBold.setting,
+        size: 30,
+      ),
+      label: 'Settings',
     ),
   ];
 

@@ -47,7 +47,8 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       DateFormat('EEEE d\nMMMM').format(DateTime.now()),
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.05,
+                        fontSize: MediaQuery.of(context).size.width * 0.045,
+                        fontWeight: FontWeight.bold,
                         color: kblack,
                       ),
                     ),
@@ -71,7 +72,7 @@ class HomePage extends StatelessWidget {
                               'Account Balance',
                               style: TextStyle(
                                 fontSize:
-                                    MediaQuery.of(context).size.width * 0.07,
+                                    MediaQuery.of(context).size.width * 0.07 ,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),

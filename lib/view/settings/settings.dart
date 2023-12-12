@@ -40,8 +40,8 @@ class Settings extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: const [
-                    Color.fromARGB(210, 151, 52, 184),
-                    Colors.white,
+                   ktheme,
+                   kwhite
                   ],
                 ),
               ),
@@ -60,7 +60,7 @@ class Settings extends StatelessWidget {
                           width: width * 0.84,
                           height: height * 0.5,
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: kwhite,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30))),
                           child: Column(
@@ -79,7 +79,7 @@ class Settings extends StatelessWidget {
                                   },
                                   leading: Icon(
                                     Icons.privacy_tip,
-                                    color: Color.fromARGB(210, 151, 52, 184),
+                                    color: ktheme,
                                     size: width * 0.08,
                                   ),
                                   title: Text(
@@ -105,7 +105,7 @@ class Settings extends StatelessWidget {
                                   },
                                   leading: Icon(
                                     IconlyBold.document,
-                                    color: Color.fromARGB(210, 151, 52, 184),
+                                    color: ktheme,
                                     size: width * 0.08,
                                   ),
                                   title: Text(
@@ -132,7 +132,7 @@ class Settings extends StatelessWidget {
                                   },
                                   leading: Icon(
                                     Icons.android_rounded,
-                                    color: Color.fromARGB(210, 151, 52, 184),
+                                    color: ktheme,
                                     size: width * 0.08,
                                   ),
                                   title: Text(
@@ -157,7 +157,7 @@ class Settings extends StatelessWidget {
                                   },
                                   leading: Icon(
                                     Icons.restore,
-                                    color: Color.fromARGB(210, 151, 52, 184),
+                                    color: ktheme,
                                     size: width * 0.08,
                                   ),
                                   title: Text(

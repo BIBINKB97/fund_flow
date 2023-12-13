@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
+import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/splash_screens/splash1.dart';
 import 'package:hive/hive.dart';
@@ -20,12 +21,12 @@ class ResetApp extends StatelessWidget {
             'Reset App',
             style: TextStyle(
                 fontSize: MediaQuery.of(context).size.width * 0.06,
-                color: Colors.white,
+                color: kwhite,
                 fontWeight: FontWeight.w600),
           ),
           toolbarHeight: 70,
           elevation: 1,
-          backgroundColor: Color.fromARGB(210, 151, 52, 184),
+          backgroundColor: ktheme,
         ),
         body: Center(
           child: Container(
@@ -34,8 +35,8 @@ class ResetApp extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: const [
-                  Color.fromARGB(200, 151, 52, 184),
-                  Colors.white,
+                 ktheme,
+                  kwhite,
                 ],
               ),
             ),
@@ -52,7 +53,7 @@ class ResetApp extends StatelessWidget {
                 Text(
                   'This action cannot be undone and\n     you will lose all of your data.!',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 255, 17, 0),
+                      color: kred,
                       fontSize: MediaQuery.of(context).size.width * 0.06,
                       fontWeight: FontWeight.w600),
                 ),
@@ -66,14 +67,14 @@ class ResetApp extends StatelessWidget {
                         child: ElevatedButton(
                             style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white)),
+                                    MaterialStateProperty.all(kwhite)),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
                             child: Text(
                               'Cancel',
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: kblack,
                                   fontSize:
                                       MediaQuery.of(context).size.width * 0.05,
                                   fontWeight: FontWeight.w600),
@@ -81,7 +82,7 @@ class ResetApp extends StatelessWidget {
                     ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.white)),
+                                MaterialStateProperty.all<Color>(kwhite)),
                         onPressed: () async {
                           showDialog(
                               context: context,
@@ -90,7 +91,7 @@ class ResetApp extends StatelessWidget {
                                   title: Text(
                                     'Alert ! ',
                                     style: TextStyle(
-                                        color: Colors.red,
+                                        color: kred,
                                         fontSize:
                                             MediaQuery.of(context).size.width *
                                                 0.055,
@@ -116,7 +117,7 @@ class ResetApp extends StatelessWidget {
                                                       .size
                                                       .width *
                                                   0.052,
-                                              color: Colors.green),
+                                              color: kgreen),
                                         )),
                                     TextButton(
                                         onPressed: () async {
@@ -157,7 +158,7 @@ class ResetApp extends StatelessWidget {
                                                       .size
                                                       .width *
                                                   0.052,
-                                              color: Colors.red),
+                                              color: kred),
                                         ))
                                   ],
                                 );
@@ -166,7 +167,7 @@ class ResetApp extends StatelessWidget {
                         child: Text(
                           'Reset ',
                           style: TextStyle(
-                              color: Colors.black,
+                              color: kblack,
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.05,
                               fontWeight: FontWeight.w600),

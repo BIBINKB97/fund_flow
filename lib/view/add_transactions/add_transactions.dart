@@ -5,6 +5,7 @@ import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_categories/add_categories.dart';
+import 'package:fund_flow/view/add_transactions/widgets/gradient_container.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:intl/intl.dart';
 
@@ -53,19 +54,8 @@ class _AddTransactionState extends State<AddTransaction> {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          Container(
-            height: height * 0.28,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: const [ktheme, kwhite],
-              ),
-            ),
-            child: SafeArea(
+          GradientContainer(child: 
+          SafeArea(
               child: Column(
                 children: [
                   SizedBox(height: height * 0.06),

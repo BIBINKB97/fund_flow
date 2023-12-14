@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names
+// ignore_for_file: non_ant_identifier_names, avoid_types_as_parameter_names, non_constant_identifier_names
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -9,24 +9,25 @@ import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/detailed_view_of_transaction.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatefulWidget {
-  const TransactionList({super.key});
+   const TransactionList({super.key});
 
   @override
   State<TransactionList> createState() => _TransactionListState();
 }
 
 class _TransactionListState extends State<TransactionList> {
-  Icon customIcon = const Icon(
+  Icon customIcon =  Icon(
     Icons.search,
     color: kwhite,
     size: 35,
   );
 
-  Widget customSearchBar = const Text(
+  Widget customSearchBar =  Text(
     "All Transactions",
     style: TextStyle(color: kwhite, fontSize: 24, fontWeight: FontWeight.w600),
   );
@@ -38,7 +39,7 @@ class _TransactionListState extends State<TransactionList> {
         valueListenable: transactionDB.instance.transactionListNotifier,
         builder: (BuildContext, List<TransactionModel> newList, Widget_) {
           return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 236, 238, 238),
+            backgroundColor:  Color.fromARGB(255, 236, 238, 238),
             appBar: AppBar(
               centerTitle: true,
               title: customSearchBar,
@@ -96,24 +97,12 @@ class _TransactionListState extends State<TransactionList> {
                 ),
               ],
             ),
-            body: Container(
-              height: MediaQuery.of(context).size.height * 0.9,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: const [
-                    ktheme,
-                    kwhite,
-                  ],
-                ),
-              ),
-              child: Column(children: [
+            body:GradientContainer( child: Column(children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     PopupMenuButton(
-                      icon: const Icon(
+                      icon:  Icon(
                         Icons.filter_alt,
                         color: kwhite,
                         size: 30,
@@ -123,7 +112,7 @@ class _TransactionListState extends State<TransactionList> {
                           onTap: () {
                             transactionDB.instance.refreshAll();
                           },
-                          child: const Text(
+                          child:  Text(
                             'All',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
@@ -132,13 +121,13 @@ class _TransactionListState extends State<TransactionList> {
                             onTap: () {
                               transactionDB.instance.filter('Income');
                             },
-                            child: const Text('Income',
+                            child:  Text('Income',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                         PopupMenuItem(
                             onTap: () {
                               transactionDB.instance.filter('Expense');
                             },
-                            child: const Text('Expense',
+                            child:  Text('Expense',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                       ],
                     ),
@@ -146,7 +135,7 @@ class _TransactionListState extends State<TransactionList> {
                       width: 10,
                     ),
                     PopupMenuButton(
-                      icon: const Icon(
+                      icon:  Icon(
                         Icons.calendar_month_outlined,
                         color: kwhite,
                         size: 30,
@@ -158,7 +147,7 @@ class _TransactionListState extends State<TransactionList> {
                                 'All',
                               );
                             },
-                            child: const Text('All',
+                            child:  Text('All',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                         PopupMenuItem(
                             onTap: () {
@@ -166,7 +155,7 @@ class _TransactionListState extends State<TransactionList> {
                                 'today',
                               );
                             },
-                            child: const Text('Today',
+                            child:  Text('Today',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                         PopupMenuItem(
                             onTap: () {
@@ -174,7 +163,7 @@ class _TransactionListState extends State<TransactionList> {
                                 'yesterday',
                               );
                             },
-                            child: const Text(
+                            child:  Text(
                               'yesterday',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )),
@@ -183,7 +172,7 @@ class _TransactionListState extends State<TransactionList> {
                               transactionDB.instance
                                   .filterDataByDate('last week');
                             },
-                            child: const Text(
+                            child:  Text(
                               'last week',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )),
@@ -194,7 +183,7 @@ class _TransactionListState extends State<TransactionList> {
                 Expanded(
                     child: newList.isNotEmpty
                         ? ListView.separated(
-                            padding: const EdgeInsets.all(10),
+                            padding:  EdgeInsets.all(10),
                             itemBuilder: (context, index) {
                               final value = newList[index];
                               return Stack(
@@ -329,7 +318,7 @@ class _TransactionListState extends State<TransactionList> {
                           )
                         : Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children:  const [
                               NothingToShow(color: Colors.black54),
                             ],
                           )),

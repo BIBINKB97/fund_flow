@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/category_db/category_db.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/edit_transaction.dart';
 import 'package:intl/intl.dart';
 
@@ -36,22 +37,7 @@ class TransactionDetails extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: screenHeight * 0.9,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: const [
-                    ktheme,
-                    kwhite,
-                  ],
-                ),
-              ),
+            GradientContainer(
               child: ListView(
                 children: [
                   Column(

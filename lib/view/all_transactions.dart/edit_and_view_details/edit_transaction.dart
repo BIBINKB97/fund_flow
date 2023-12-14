@@ -75,8 +75,7 @@ class _EditDetailsState extends State<EditDetails> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: const [
-                  ktheme
-                  ,
+                  ktheme,
                  kwhite,
                 ],
               ),

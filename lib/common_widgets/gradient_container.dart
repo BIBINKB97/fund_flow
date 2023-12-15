@@ -3,17 +3,17 @@ import 'package:fund_flow/utils/colors.dart';
 
 class GradientContainer extends StatelessWidget {
   final Widget child;
+  final double height;
   const GradientContainer({
     super.key,
     required this.child,
+    required this.height,
   });
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-
     return Container(
-        height: height * 0.28,
+        height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),

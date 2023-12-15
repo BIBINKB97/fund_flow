@@ -14,32 +14,34 @@ import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/detai
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatefulWidget {
-   const TransactionList({super.key});
+  const TransactionList({super.key});
 
   @override
   State<TransactionList> createState() => _TransactionListState();
 }
 
 class _TransactionListState extends State<TransactionList> {
-  Icon customIcon =  Icon(
+  Icon customIcon = Icon(
     Icons.search,
     color: kwhite,
     size: 35,
   );
 
-  Widget customSearchBar =  Text(
+  Widget customSearchBar = Text(
     "All Transactions",
     style: TextStyle(color: kwhite, fontSize: 24, fontWeight: FontWeight.w600),
   );
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     transactionDB.instance.refreshAll();
     CategoryDB.instance.refreshUI();
     return ValueListenableBuilder(
         valueListenable: transactionDB.instance.transactionListNotifier,
         builder: (BuildContext, List<TransactionModel> newList, Widget_) {
           return Scaffold(
-            backgroundColor:  Color.fromARGB(255, 236, 238, 238),
+            backgroundColor: Color.fromARGB(255, 236, 238, 238),
             appBar: AppBar(
               centerTitle: true,
               title: customSearchBar,
@@ -97,12 +99,14 @@ class _TransactionListState extends State<TransactionList> {
                 ),
               ],
             ),
-            body:GradientContainer( child: Column(children: [
+            body: GradientContainer(
+              height: height * 2.5,
+              child: Column(children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     PopupMenuButton(
-                      icon:  Icon(
+                      icon: Icon(
                         Icons.filter_alt,
                         color: kwhite,
                         size: 30,
@@ -112,7 +116,7 @@ class _TransactionListState extends State<TransactionList> {
                           onTap: () {
                             transactionDB.instance.refreshAll();
                           },
-                          child:  Text(
+                          child: Text(
                             'All',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
@@ -121,13 +125,13 @@ class _TransactionListState extends State<TransactionList> {
                             onTap: () {
                               transactionDB.instance.filter('Income');
                             },
-                            child:  Text('Income',
+                            child: Text('Income',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                         PopupMenuItem(
                             onTap: () {
                               transactionDB.instance.filter('Expense');
                             },
-                            child:  Text('Expense',
+                            child: Text('Expense',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                       ],
                     ),
@@ -135,7 +139,7 @@ class _TransactionListState extends State<TransactionList> {
                       width: 10,
                     ),
                     PopupMenuButton(
-                      icon:  Icon(
+                      icon: Icon(
                         Icons.calendar_month_outlined,
                         color: kwhite,
                         size: 30,
@@ -147,7 +151,7 @@ class _TransactionListState extends State<TransactionList> {
                                 'All',
                               );
                             },
-                            child:  Text('All',
+                            child: Text('All',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                         PopupMenuItem(
                             onTap: () {
@@ -155,7 +159,7 @@ class _TransactionListState extends State<TransactionList> {
                                 'today',
                               );
                             },
-                            child:  Text('Today',
+                            child: Text('Today',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
                         PopupMenuItem(
                             onTap: () {
@@ -163,7 +167,7 @@ class _TransactionListState extends State<TransactionList> {
                                 'yesterday',
                               );
                             },
-                            child:  Text(
+                            child: Text(
                               'yesterday',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )),
@@ -172,7 +176,7 @@ class _TransactionListState extends State<TransactionList> {
                               transactionDB.instance
                                   .filterDataByDate('last week');
                             },
-                            child:  Text(
+                            child: Text(
                               'last week',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )),
@@ -183,7 +187,7 @@ class _TransactionListState extends State<TransactionList> {
                 Expanded(
                     child: newList.isNotEmpty
                         ? ListView.separated(
-                            padding:  EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10),
                             itemBuilder: (context, index) {
                               final value = newList[index];
                               return Stack(
@@ -318,7 +322,7 @@ class _TransactionListState extends State<TransactionList> {
                           )
                         : Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children:  const [
+                            children: const [
                               NothingToShow(color: Colors.black54),
                             ],
                           )),

@@ -36,82 +36,56 @@ class TransactionDetails extends StatelessWidget {
         backgroundColor: ktheme,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            GradientContainer(
-              height: height * 0.88,
-              child: ListView(
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: height * 0.09,
-                      ),
-                      Container(
-                        width: width * 0.8,
-                        height: width * 1,
-                        decoration: BoxDecoration(
-                          color: kwhite,
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
-                        child: Column(
-                          children: [
-                            CustomListTile(
-                              title: 'Amount : ',
-                              text: data.amount.toString(),
-                              icon: Icons.currency_rupee_outlined,
-                            ),
-                            CustomListTile(
-                              title: 'Category : ',
-                              text: data.category.name,
-                              icon: Icons.category,
-                            ),
-                            CustomListTile(
-                              title: 'Description : ',
-                              text: data.description,
-                              icon: Icons.description,
-                            ),
-                            CustomListTile(
-                              title: 'Date : ',
-                              text: parseDate(data.date),
-                              icon: Icons.date_range,
-                            ),
-                            SizedBox(
-                              height: height * 0.02,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
-                              ktheme,
-                            ),
-                          ),
-                          onPressed: () {
-                            CategoryDB.instance.refreshUI();
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => EditDetails(
-                                  data: data,
-                                ),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            'Edit Details',
-                            style: TextStyle(fontSize: width * 0.05),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+        child: GradientContainer(
+          height: height * 0.88,
+          child: Column(
+            children: [
+              CustomListTile(
+                title: 'Amount : ',
+                text: data.amount.toString(),
+                icon: Icons.currency_rupee_outlined,
               ),
-            ),
-          ],
+              CustomListTile(
+                title: 'Category : ',
+                text: data.category.name,
+                icon: Icons.category,
+              ),
+              CustomListTile(
+                title: 'Description : ',
+                text: data.description,
+                icon: Icons.description,
+              ),
+              CustomListTile(
+                title: 'Date : ',
+                text: parseDate(data.date),
+                icon: Icons.date_range,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 130),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      ktheme,
+                    ),
+                  ),
+                  onPressed: () {
+                    CategoryDB.instance.refreshUI();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => EditDetails(
+                          data: data,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Edit Details',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

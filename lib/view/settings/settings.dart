@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/view/settings/about_us/about_us.dart';
+import 'package:fund_flow/view/settings/privacy_policy/privacy_policy.dart';
+import 'package:fund_flow/view/settings/reset_app/reset_app.dart';
+import 'package:fund_flow/view/settings/terms_and_conditions/terms_and_conditions.dart';
 
 import 'package:fund_flow/view/settings/widgets/custom_list_tile.dart';
 
@@ -40,23 +44,55 @@ class Settings extends StatelessWidget {
                 ),
               ),
               child: Center(
-            
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 30,
+                    ),
                     CustomListSettings(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PrivacyPolicy(),
+                              ));
+                        },
                         text: 'Privacy Policy',
                         icon: Icons.privacy_tip_rounded),
                     CustomListSettings(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TermsAndConditions(),
+                              ));
+                        },
                         text: 'Trems And Conditions',
                         icon: Icons.description_rounded),
                     CustomListSettings(
-                        onTap: () {}, text: 'About Us', icon: Icons.android),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AboutUs(),
+                              ));
+                        },
+                        text: 'About Us',
+                        icon: Icons.android),
                     CustomListSettings(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ResetApp(),
+                              ));
+                        },
                         text: 'Reset App',
                         icon: Icons.restart_alt),
+                    SizedBox(
+                      height: 100,
+                    ),
+                    Text('version 1.0.0')
                   ],
                 ),
               ),

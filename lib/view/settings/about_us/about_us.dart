@@ -30,17 +30,17 @@ class AboutUs extends StatelessWidget {
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
-                      text: 'BillsBook',
+                      text: 'Fund Flow',
                       style: GoogleFonts.amiko(
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(210, 151, 52, 184),
                           fontSize: width * 0.052)),
                   TextSpan(
                       text:
-                          "   is a money management app designed to help you track your expenses, create budgets, and achieve your financial goals. With our easy-to-use interface and powerful tools, you can take control of your finances and make informed decisions about your money.\n\nThis app is perfect for individuals and families who want to stay on top of their finances and make informed decisions about their money. Whether you're trying to save up for a big purchase or just looking to get a better handle on your day-to-day expenses, 'BillsBook' has you covered.",
+                          "   is a money management app designed to help you track your expenses, create budgets, and achieve your financial goals. With our easy-to-use interface and powerful tools, you can take control of your finances and make informed decisions about your money.\n\nThis app is perfect for individuals and families who want to stay on top of their finances and make informed decisions about their money. Whether you're trying to save up for a big purchase or just looking to get a better handle on your day-to-day expenses, 'FundFlow' has you covered.",
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: width * 0.045,
+                        fontSize: width * 0.04,
                       )),
                 ],
               ),
@@ -49,9 +49,9 @@ class AboutUs extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.45,
             ),
             Text(
-              'Developed by Bibin Kochumalayil',
+              'Developed by BBNTecLabs LLC',
               style: TextStyle(
-                  fontSize: width * 0.052,
+                  fontSize: width * 0.042,
                   color: Color.fromARGB(210, 151, 52, 184),
                   fontWeight: FontWeight.w500),
             )

@@ -35,7 +35,7 @@ class ResetApp extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: const [
-                 ktheme,
+                  ktheme,
                   kwhite,
                 ],
               ),
@@ -135,7 +135,6 @@ class ResetApp extends StatelessWidget {
                                           final categorydb =
                                               await Hive.openBox<CategoryModel>(
                                                   'category');
-                                         
 
                                           categorydb.clear();
                                           transationDb.clear();

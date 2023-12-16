@@ -16,34 +16,44 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: EdgeInsets.only(top: height * 0.03),
-      child: ListTile(
-        leading: Icon(
-          icon,
-          color: ktheme,
-          size: width * 0.075,
-        ),
-        title: RichText(
-          text: TextSpan(
-            text: title,
-            style: TextStyle(
-              fontSize: width * 0.045,
-              color: kblack,
-              fontWeight: FontWeight.w500,
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: height * 0.02),
+          child: ListTile(
+            leading: Icon(
+              icon,
+              color: ktheme,
+              size: width * 0.075,
             ),
-            children: <TextSpan>[
-              TextSpan(
-                text: text,
+            title: RichText(
+              text: TextSpan(
+                text: title,
                 style: TextStyle(
-                  color: ktheme,
                   fontSize: width * 0.045,
+                  color: kblack,
+                  fontWeight: FontWeight.w500,
                 ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: text,
+                    style: TextStyle(
+                      color: ktheme,
+                      fontSize: width * 0.045,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
-      ),
+        Divider(
+          thickness: 1,
+          color: kgrey,
+          indent: 20,
+          endIndent: 20,
+        ),
+      ],
     );
   }
 }

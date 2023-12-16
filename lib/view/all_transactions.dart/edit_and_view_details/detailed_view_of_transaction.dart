@@ -45,14 +45,14 @@ class TransactionDetails extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(
-                        height: height * 0.08,
+                        height: height * 0.09,
                       ),
                       Container(
-                        width: width * 0.9,
-                        height: width * 1.1,
+                        width: width * 0.8,
+                        height: width * 1,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(254, 250, 255, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: kwhite,
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
                         child: Column(
                           children: [
@@ -79,28 +79,31 @@ class TransactionDetails extends StatelessWidget {
                             SizedBox(
                               height: height * 0.02,
                             ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                  ktheme,
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              ktheme,
+                            ),
+                          ),
+                          onPressed: () {
+                            CategoryDB.instance.refreshUI();
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => EditDetails(
+                                  data: data,
                                 ),
                               ),
-                              onPressed: () {
-                                CategoryDB.instance.refreshUI();
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => EditDetails(
-                                      data: data,
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                'Edit Details',
-                                style: TextStyle(fontSize: width * 0.05),
-                              ),
-                            ),
-                          ],
+                            );
+                          },
+                          child: Text(
+                            'Edit Details',
+                            style: TextStyle(fontSize: width * 0.05),
+                          ),
                         ),
                       ),
                     ],

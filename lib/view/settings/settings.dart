@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/utils/colors.dart';
-import 'package:fund_flow/view/settings/about_us/about_us.dart';
-import 'package:fund_flow/view/settings/privacy_policy/privacy_policy.dart';
-import 'package:fund_flow/view/settings/reset_app/reset_app.dart';
-import 'package:fund_flow/view/settings/terms_and_conditions/terms_and_conditions.dart';
-import 'package:iconly/iconly.dart';
+
+import 'package:fund_flow/view/settings/widgets/custom_list_tile.dart';
 
 class Settings extends StatelessWidget {
   const Settings({super.key});
@@ -39,142 +36,29 @@ class Settings extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: const [
-                   ktheme,
-                   kwhite
-                  ],
+                  colors: const [ktheme, kwhite],
                 ),
               ),
-              child: ListView(
-                children: [
-                  SafeArea(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        Container(
-                          width: width * 0.84,
-                          height: height * 0.5,
-                          decoration: BoxDecoration(
-                              color: kwhite,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30))),
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: height * 0.02,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20),
-                                child: ListTile(
-                                  onTap: () {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                      builder: (context) => PrivacyPolicy(),
-                                    ));
-                                  },
-                                  leading: Icon(
-                                    Icons.privacy_tip,
-                                    color: ktheme,
-                                    size: width * 0.08,
-                                  ),
-                                  title: Text(
-                                    'Privacy Policy',
-                                    style: TextStyle(
-                                        fontSize: width * 0.052,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: height * 0.02,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20),
-                                child: ListTile(
-                                  onTap: () {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          TermsAndConditions(),
-                                    ));
-                                  },
-                                  leading: Icon(
-                                    IconlyBold.document,
-                                    color: ktheme,
-                                    size: width * 0.08,
-                                  ),
-                                  title: Text(
-                                    'Terms And Conditions',
-                                    style: TextStyle(
-                                        fontSize: width * 0.052,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: height * 0.02,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  left: 20,
-                                ),
-                                child: ListTile(
-                                  onTap: () {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                      builder: (context) => AboutUs(),
-                                    ));
-                                  },
-                                  leading: Icon(
-                                    Icons.android_rounded,
-                                    color: ktheme,
-                                    size: width * 0.08,
-                                  ),
-                                  title: Text(
-                                    'About',
-                                    style: TextStyle(
-                                        fontSize: width * 0.052,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: height * 0.02,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20),
-                                child: ListTile(
-                                  onTap: () {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                      builder: (context) => ResetApp(),
-                                    ));
-                                  },
-                                  leading: Icon(
-                                    Icons.restore,
-                                    color: ktheme,
-                                    size: width * 0.08,
-                                  ),
-                                  title: Text(
-                                    'Reset App',
-                                    style: TextStyle(
-                                        fontSize: width * 0.052,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+              child: Center(
+            
+                child: Column(
+                  children: [
+                    CustomListSettings(
+                        onTap: () {},
+                        text: 'Privacy Policy',
+                        icon: Icons.privacy_tip_rounded),
+                    CustomListSettings(
+                        onTap: () {},
+                        text: 'Trems And Conditions',
+                        icon: Icons.description_rounded),
+                    CustomListSettings(
+                        onTap: () {}, text: 'About Us', icon: Icons.android),
+                    CustomListSettings(
+                        onTap: () {},
+                        text: 'Reset App',
+                        icon: Icons.restart_alt),
+                  ],
+                ),
               ),
             ),
           ],

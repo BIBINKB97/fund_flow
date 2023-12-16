@@ -47,8 +47,7 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       DateFormat('EEEE d\nMMMM').format(DateTime.now()),
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.width * 0.045,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
                         color: kblack,
                       ),
                     ),
@@ -72,7 +71,7 @@ class HomePage extends StatelessWidget {
                               'Account Balance',
                               style: TextStyle(
                                 fontSize:
-                                    MediaQuery.of(context).size.width * 0.07 ,
+                                    MediaQuery.of(context).size.width * 0.07,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -103,7 +102,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SlideInLeft(
-                          duration: Duration(milliseconds: 400),
+                          duration: Duration(milliseconds: 300),
                           child: IncomeExpenseCard(
                               containerColor: kgreen,
                               iconColor: kgreen,
@@ -115,7 +114,7 @@ class HomePage extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.06,
                         ),
                         SlideInRight(
-                          duration: Duration(milliseconds: 400),
+                          duration: Duration(milliseconds: 300),
                           child: IncomeExpenseCard(
                               containerColor: kred,
                               iconColor: kred,
@@ -138,7 +137,7 @@ class HomePage extends StatelessWidget {
               'Recent Transactions',
               style: TextStyle(
                 fontSize: MediaQuery.of(context).size.width * 0.05,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
               ),
             ),
             trailing: TextButton(
@@ -165,7 +164,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(
                   color: ktheme,
                   fontSize: MediaQuery.of(context).size.width * 0.05,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),

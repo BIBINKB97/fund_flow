@@ -284,21 +284,21 @@ class _TransactionListState extends State<TransactionList> {
                                           title: Text(
                                             value.category.name,
                                             style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
                                           subtitle: Text(
                                             parseDate(value.date),
                                             style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 15,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
                                           trailing: Text(
                                             "₹ ${value.amount}",
                                             style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w500,
                                               color: value.type ==
                                                       CategoryType.income

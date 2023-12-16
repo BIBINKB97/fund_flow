@@ -6,6 +6,8 @@ import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/utils/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/add_categories/add_categories.dart';
+import 'package:fund_flow/view/add_transactions/widgets/custom_container.dart';
+import 'package:fund_flow/view/add_transactions/widgets/custom_text_style.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:intl/intl.dart';
 
@@ -55,7 +57,7 @@ class _AddTransactionState extends State<AddTransaction> {
       body: SingleChildScrollView(
         child: Column(children: [
           GradientContainer(
-            height: height * 0.28,
+            height: height * 0.25,
             child: SafeArea(
               child: Column(
                 children: [
@@ -64,16 +66,16 @@ class _AddTransactionState extends State<AddTransaction> {
                       child: Text(
                     'Enter Amount',
                     style: TextStyle(
-                        fontSize: width * 0.08,
-                        fontWeight: FontWeight.w500,
+                        fontSize: width * 0.07,
+                        fontWeight: FontWeight.w400,
                         color: kwhite),
                   )),
                   SizedBox(
-                    height: height * 0.045,
+                    height: height * 0.04,
                   ),
                   Center(
                     child: SizedBox(
-                      height: height * 0.095,
+                      height: height * 0.075,
                       width: width * 0.40,
                       child: TextFormField(
                         controller: _amountTextEditingController,
@@ -100,10 +102,8 @@ class _AddTransactionState extends State<AddTransaction> {
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                width: width * 0.116,
-              ),
               InkWell(
                 onTap: () {
                   setState(() {
@@ -139,9 +139,6 @@ class _AddTransactionState extends State<AddTransaction> {
                     ],
                   ),
                 ),
-              ),
-              SizedBox(
-                width: width * 0.059,
               ),
               InkWell(
                 onTap: () {
@@ -185,20 +182,9 @@ class _AddTransactionState extends State<AddTransaction> {
             height: height * 0.03,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                width: width * 0.06,
-              ),
-              Container(
-                height: height * 0.075,
-                width: width * 0.415,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(
-                    color: kgrey,
-                    width: 1.2,
-                  ),
-                ),
+              CustomContainer(
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
                   child: Row(
@@ -215,35 +201,20 @@ class _AddTransactionState extends State<AddTransaction> {
                           },
                           child: Text(
                             'Add  Category',
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontSize: width * 0.052,
-                                fontWeight: FontWeight.w600),
+                            style: CustomTextStyle().textStyle,
                           )),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
-                width: width * 0.040,
-              ),
-              Container(
-                height: height * 0.075,
-                width: width * 0.415,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(color: kgrey, width: width * 0.0025),
-                ),
+              CustomContainer(
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: DropdownButton<String>(
                     underline: Container(),
                     hint: Text(
                       'Select Category',
-                      style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: width * 0.051,
-                          fontWeight: FontWeight.w600),
+                      style: CustomTextStyle().textStyle,
                     ),
                     value: _categoryID,
                     items: (_selectedCategorytype == CategoryType.income
@@ -255,10 +226,7 @@ class _AddTransactionState extends State<AddTransaction> {
                         value: e.id,
                         child: Text(
                           e.name,
-                          style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: width * 0.052,
-                              fontWeight: FontWeight.w600),
+                          style: CustomTextStyle().textStyle,
                         ),
                         onTap: () {
                           _selectedCategoryModel = e;
@@ -272,7 +240,7 @@ class _AddTransactionState extends State<AddTransaction> {
                     },
                   ),
                 ),
-              ),
+              )
             ],
           ),
           SizedBox(
@@ -291,8 +259,7 @@ class _AddTransactionState extends State<AddTransaction> {
                     ),
                   ),
                   cursorColor: kblack,
-                  style: TextStyle(
-                      fontSize: width * 0.052, fontWeight: FontWeight.w600),
+                  style: CustomTextStyle().textStyle,
                 ),
               ),
             ],
@@ -334,10 +301,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       _selectedDate == null
                           ? 'pick a date'
                           : DateFormat("dd-MMMM-yyyy").format(_selectedDate!),
-                      style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: width * 0.052,
-                          fontWeight: FontWeight.w600),
+                      style: CustomTextStyle().textStyle,
                     )),
               ),
             ],
@@ -350,7 +314,7 @@ class _AddTransactionState extends State<AddTransaction> {
               height: height * 0.05,
               minWidth: width * 0.4,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
               color: ktheme,
               onPressed: () {
                 addTransaction();
@@ -468,10 +432,9 @@ class _AddTransactionState extends State<AddTransaction> {
         behavior: SnackBarBehavior.floating,
         content: Text(
           "Transaction added Successfully !",
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 22, color: kgreen),
           textAlign: TextAlign.center,
         ),
-        backgroundColor: kgreen,
       ),
     );
   }

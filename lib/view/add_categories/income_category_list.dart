@@ -10,7 +10,6 @@ class IncomeCategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return ValueListenableBuilder(
       valueListenable: CategoryDB().incomeCategoryListListner,
       builder: (BuildContext ctx, List<CategoryModel> newList, Widget? _) {
@@ -31,9 +30,9 @@ class IncomeCategoryList extends StatelessWidget {
                               Text(
                                 (category.name),
                                 style: TextStyle(
-                                    fontSize: width * 0.055,
+                                    fontSize: 20,
                                     color: kblack54,
-                                    fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.w400),
                               ),
                               IconButton(
                                   onPressed: () {

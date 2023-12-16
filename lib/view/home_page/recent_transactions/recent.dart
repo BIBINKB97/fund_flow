@@ -29,10 +29,10 @@ class _RecentState extends State<Recent> {
                   itemBuilder: (context, index) {
                     final value = newList[index];
                     return SlideInUp(
-                      duration: Duration(milliseconds: 400),
+                      duration: Duration(milliseconds: 300),
                       child: Card(
                         elevation: 0,
-                        color: Color.fromARGB(255, 233, 233, 233),
+                        color: Color.fromARGB(252, 230, 230, 230),
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
@@ -51,33 +51,33 @@ class _RecentState extends State<Recent> {
                             child: value.type == CategoryType.income
                                 ? Icon(
                                     Icons.arrow_upward,
-                                    size: 28,
+                                    size: 23,
                                     color: kwhite,
                                   )
                                 : Icon(
                                     Icons.arrow_downward,
-                                    size: 28,
+                                    size: 23,
                                     color: kwhite,
                                   ),
                           ),
                           title: Text(
                             value.category.name,
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           subtitle: Text(
                             parseDate(value.date),
                             style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                           trailing: Text(
                             "₹ ${value.amount}",
                             style: TextStyle(
-                              fontSize: 22,
+                              fontSize: 19,
                               fontWeight: FontWeight.w500,
                               color: value.type == CategoryType.income
                                   ? kgreen

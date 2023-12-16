@@ -4,7 +4,6 @@ import 'package:fund_flow/view/settings/about_us/about_us.dart';
 import 'package:fund_flow/view/settings/privacy_policy/privacy_policy.dart';
 import 'package:fund_flow/view/settings/reset_app/reset_app.dart';
 import 'package:fund_flow/view/settings/terms_and_conditions/terms_and_conditions.dart';
-
 import 'package:fund_flow/view/settings/widgets/custom_list_tile.dart';
 
 class Settings extends StatelessWidget {

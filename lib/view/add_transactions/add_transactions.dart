@@ -4,8 +4,8 @@ import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/utils/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/add_categories/add_categories.dart';
-import 'package:fund_flow/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:intl/intl.dart';
 

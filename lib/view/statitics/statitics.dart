@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fund_flow/common_widgets/nothing_to_show.dart';
 import 'package:fund_flow/controller/chart_db/chart_db.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/utils/common_widgets/nothing_to_show.dart';
 import 'package:fund_flow/view/statitics/model.dart';
 import 'package:fund_flow/view/home_page/balance/balance.dart';
 

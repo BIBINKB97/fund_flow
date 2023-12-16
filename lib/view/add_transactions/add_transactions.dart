@@ -54,8 +54,9 @@ class _AddTransactionState extends State<AddTransaction> {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          GradientContainer(child: 
-          SafeArea(
+          GradientContainer(
+            height: height * 0.28,
+            child: SafeArea(
               child: Column(
                 children: [
                   SizedBox(height: height * 0.06),

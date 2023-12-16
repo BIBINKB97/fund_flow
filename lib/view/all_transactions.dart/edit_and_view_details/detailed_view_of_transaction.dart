@@ -4,6 +4,7 @@ import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/edit_transaction.dart';
+import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/widgets/custom_list_tile.dart';
 import 'package:intl/intl.dart';
 
 class TransactionDetails extends StatelessWidget {
@@ -16,8 +17,8 @@ class TransactionDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
@@ -25,12 +26,12 @@ class TransactionDetails extends StatelessWidget {
         title: Text(
           'Details of Transaction',
           style: TextStyle(
-            fontSize: screenWidth * 0.06,
+            fontSize: width * 0.06,
             fontWeight: FontWeight.w600,
             color: kwhite,
           ),
         ),
-        toolbarHeight: screenHeight * 0.09,
+        toolbarHeight: height * 0.09,
         elevation: 1,
         backgroundColor: ktheme,
       ),
@@ -38,148 +39,45 @@ class TransactionDetails extends StatelessWidget {
         child: Column(
           children: [
             GradientContainer(
+              height: height * 0.88,
               child: ListView(
                 children: [
                   Column(
                     children: [
                       SizedBox(
-                        height: screenHeight * 0.08,
+                        height: height * 0.08,
                       ),
                       Container(
-                        width: screenWidth * 0.9,
-                        height: screenWidth * 1.1,
+                        width: width * 0.9,
+                        height: width * 1.1,
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(254, 250, 255, 1),
                           borderRadius: BorderRadius.all(Radius.circular(30)),
                         ),
                         child: Column(
                           children: [
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: screenHeight * 0.03),
-                              child: ListTile(
-                                leading: Icon(
-                                  Icons.currency_rupee,
-                                  color: ktheme,
-                                  size: screenWidth * 0.075,
-                                ),
-                                title: RichText(
-                                  text: TextSpan(
-                                    text: 'Amount : ',
-                                    style: TextStyle(
-                                      fontSize: screenWidth * 0.045,
-                                      color: kblack,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: data.amount.toString(),
-                                        style: TextStyle(
-                                          color:
-                                              ktheme,
-                                          fontSize: screenWidth * 0.045,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            CustomListTile(
+                              title: 'Amount : ',
+                              text: data.amount.toString(),
+                              icon: Icons.currency_rupee_outlined,
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: screenHeight * 0.03),
-                              child: ListTile(
-                                leading: Icon(
-                                  Icons.category,
-                                  color: ktheme,
-                                  size: screenWidth * 0.075,
-                                ),
-                                title: RichText(
-                                  text: TextSpan(
-                                    text: 'Category: ',
-                                    style: TextStyle(
-                                      fontSize: screenWidth * 0.045,
-                                      color: kblack,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: data.category.name,
-                                        style: TextStyle(
-                                          color:
-                                             ktheme,
-                                          fontSize: screenWidth * 0.045,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            CustomListTile(
+                              title: 'Category : ',
+                              text: data.category.name,
+                              icon: Icons.category,
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: screenHeight * 0.03),
-                              child: ListTile(
-                                leading: Icon(
-                                  Icons.note,
-                                  color: ktheme,
-                                  size: screenWidth * 0.075,
-                                ),
-                                title: RichText(
-                                  text: TextSpan(
-                                    text: 'Description: ',
-                                    style: TextStyle(
-                                      fontSize: screenWidth * 0.045,
-                                      color: kblack,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: data.description,
-                                        style: TextStyle(
-                                          color:
-                                              ktheme,
-                                          fontSize: screenWidth * 0.045,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            CustomListTile(
+                              title: 'Description : ',
+                              text: data.description,
+                              icon: Icons.description,
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: screenHeight * 0.03),
-                              child: ListTile(
-                                leading: Icon(
-                                  Icons.date_range,
-                                  color: ktheme,
-                                  size: screenWidth * 0.075,
-                                ),
-                                title: RichText(
-                                  text: TextSpan(
-                                    text: 'Date: ',
-                                    style: TextStyle(
-                                      fontSize: screenWidth * 0.045,
-                                      color: kblack,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: parseDate(data.date),
-                                        style: TextStyle(
-                                          color:
-                                             ktheme,
-                                          fontSize: screenWidth * 0.045,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            CustomListTile(
+                              title: 'Date : ',
+                              text: parseDate(data.date),
+                              icon: Icons.date_range,
                             ),
                             SizedBox(
-                              height: screenHeight * 0.02,
+                              height: height * 0.02,
                             ),
                             ElevatedButton(
                               style: ButtonStyle(
@@ -199,7 +97,7 @@ class TransactionDetails extends StatelessWidget {
                               },
                               child: Text(
                                 'Edit Details',
-                                style: TextStyle(fontSize: screenWidth * 0.05),
+                                style: TextStyle(fontSize: width * 0.05),
                               ),
                             ),
                           ],

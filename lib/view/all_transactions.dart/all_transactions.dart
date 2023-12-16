@@ -3,13 +3,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:fund_flow/common_widgets/nothing_to_show.dart';
+import 'package:fund_flow/utils/common_widgets/nothing_to_show.dart';
 import 'package:fund_flow/controller/category_db/category_db.dart';
 import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
-import 'package:fund_flow/common_widgets/gradient_container.dart';
+import 'package:fund_flow/utils/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/detailed_view_of_transaction.dart';
 import 'package:intl/intl.dart';
 

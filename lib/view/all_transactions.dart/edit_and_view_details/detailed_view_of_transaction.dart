@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/category_db/category_db.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
-import 'package:fund_flow/common_widgets/gradient_container.dart';
+import 'package:fund_flow/utils/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/edit_transaction.dart';
 import 'package:fund_flow/view/all_transactions.dart/edit_and_view_details/widgets/custom_list_tile.dart';
 import 'package:intl/intl.dart';

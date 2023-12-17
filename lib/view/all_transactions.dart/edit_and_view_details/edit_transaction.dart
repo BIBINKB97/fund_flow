@@ -1,9 +1,4 @@
-
-
-
-
 // ignore_for_file: must_be_immutable
-
 
 import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/category_db/category_db.dart';
@@ -76,7 +71,7 @@ class _EditDetailsState extends State<EditDetails> {
                 end: Alignment.bottomCenter,
                 colors: const [
                   ktheme,
-                 kwhite,
+                  kwhite,
                 ],
               ),
             ),
@@ -111,7 +106,7 @@ class _EditDetailsState extends State<EditDetails> {
                               color: ktheme,
                               size: width * 0.08,
                             )),
-                        cursorColor:kblack,
+                        cursorColor: kblack,
                         keyboardType: TextInputType.number,
                         style: TextStyle(
                             fontSize: width * 0.08,
@@ -140,7 +135,7 @@ class _EditDetailsState extends State<EditDetails> {
                   height: height * 0.070,
                   width: width * 0.35,
                   decoration: BoxDecoration(
-                      color:  kgreen,
+                      color: kgreen,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: Row(
                     children: [
@@ -185,7 +180,7 @@ class _EditDetailsState extends State<EditDetails> {
                   child: Row(
                     children: [
                       Radio(
-                          activeColor : kwhite,
+                          activeColor: kwhite,
                           value: CategoryType.expense,
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {

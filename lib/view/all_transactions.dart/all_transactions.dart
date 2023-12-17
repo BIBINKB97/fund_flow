@@ -24,7 +24,7 @@ class _TransactionListState extends State<TransactionList> {
   Icon customIcon = Icon(
     Icons.search,
     color: kwhite,
-    size: 35,
+    size: 30,
   );
 
   Widget customSearchBar = Text(
@@ -79,7 +79,7 @@ class _TransactionListState extends State<TransactionList> {
                       } else {
                         customIcon = Icon(
                           Icons.search,
-                          size: 35,
+                          size: 30,
                           color: kwhite,
                         );
                         customSearchBar = Text(
@@ -109,7 +109,7 @@ class _TransactionListState extends State<TransactionList> {
                       icon: Icon(
                         Icons.filter_alt,
                         color: kwhite,
-                        size: 30,
+                        size: 25,
                       ),
                       itemBuilder: (context) => [
                         PopupMenuItem(
@@ -142,7 +142,7 @@ class _TransactionListState extends State<TransactionList> {
                       icon: Icon(
                         Icons.calendar_month_outlined,
                         color: kwhite,
-                        size: 30,
+                        size: 25,
                       ),
                       itemBuilder: (context) => [
                         PopupMenuItem(

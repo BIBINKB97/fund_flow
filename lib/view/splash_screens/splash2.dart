@@ -17,7 +17,7 @@ class _Splash2State extends State<Splash2> {
   @override
   void initState() {
     super.initState();
-  
+
     filterFunction();
     Timer(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
@@ -43,6 +43,7 @@ class _Splash2State extends State<Splash2> {
                 height: avatarSize,
               ),
               CircleAvatar(
+                backgroundColor: kwhite,
                 radius: avatarSize / 3,
                 backgroundImage: AssetImage("images/app_icon.png"),
               ),
@@ -55,8 +56,7 @@ class _Splash2State extends State<Splash2> {
                   style: GoogleFonts.exo(
                     fontSize: appNameFontSize,
                     fontWeight: FontWeight.w800,
-                    color: kwhite
-                    ,
+                    color: kwhite,
                   ),
                 ),
               ),

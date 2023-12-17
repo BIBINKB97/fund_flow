@@ -27,35 +27,35 @@ class _BottomNavState extends State<BottomNav> {
     BottomNavigationBarItem(
       icon: Icon(
         IconlyBold.home,
-        size: 30,
+        size: 27,
       ),
       label: 'Home',
     ),
     BottomNavigationBarItem(
       icon: Icon(
         Icons.compare_arrows,
-        size: 36,
+        size: 30,
       ),
       label: 'Transactions',
     ),
     BottomNavigationBarItem(
       icon: Icon(
         IconlyBold.plus,
-        size: 30,
+        size: 27,
       ),
       label: 'Add Transaction',
     ),
     BottomNavigationBarItem(
       icon: Icon(
         IconlyBold.graph,
-        size: 30,
+        size: 27,
       ),
       label: 'Statitics',
     ),
     BottomNavigationBarItem(
       icon: Icon(
         IconlyBold.setting,
-        size: 30,
+        size: 27,
       ),
       label: 'Settings',
     ),

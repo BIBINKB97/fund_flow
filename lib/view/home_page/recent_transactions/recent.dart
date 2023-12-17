@@ -32,7 +32,7 @@ class _RecentState extends State<Recent> {
                       duration: Duration(milliseconds: 300),
                       child: Card(
                         elevation: 0,
-                        color: Color.fromARGB(252, 230, 230, 230),
+                        color: Color.fromARGB(252, 233, 233, 233),
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),

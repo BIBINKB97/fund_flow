@@ -21,8 +21,8 @@ class _Splash1State extends State<Splash1> {
     super.initState();
     _checkIfSeenSplash();
   }
- 
-  void _checkIfSeenSplash() async { 
+
+  void _checkIfSeenSplash() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool hasSeenSplash = prefs.getBool('hasSeenSplash') ?? false;
     setState(() {
@@ -39,28 +39,25 @@ class _Splash1State extends State<Splash1> {
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double appNameFontSize = screenWidth * 0.14;
-    final double imageContainerHeight = screenHeight * 0.45;
-    final double imageContainerWidth = screenWidth * 0.9;
-    final double headingFontSize = screenHeight * 0.04;
+    final double appNameFontSize = screenWidth * 0.13;
+    final double imageContainerHeight = screenHeight * 0.35;
+    final double imageContainerWidth = screenWidth * 0.8;
+    final double headingFontSize = screenHeight * 0.03;
     final double buttonHeight = screenHeight * 0.05;
-    final double buttonFontSize = screenHeight * 0.030;
+    final double buttonFontSize = screenHeight * 0.025;
 
     return Scaffold(
       body: SingleChildScrollView(
-        child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 110, horizontal: 10),
           child: Column(
             children: [
-              SizedBox(
-                height: screenHeight * 0.09,
-              ),
-              Container(
-                alignment: Alignment.topCenter,
+              Center(
                 child: Text(
                   "Fund Flow",
                   style: GoogleFonts.exo(
                     fontSize: appNameFontSize,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     color: ktheme,
                   ),
                 ),
@@ -75,8 +72,7 @@ class _Splash1State extends State<Splash1> {
                 ),
               ),
               Container(
-                alignment: Alignment.bottomLeft,
-                padding: EdgeInsets.only(left: screenWidth * 0.09),
+                padding: EdgeInsets.only(top: 30, left: screenWidth * 0.08),
                 child: RichText(
                   text: TextSpan(
                     text: "Let's\nManage",
@@ -107,14 +103,14 @@ class _Splash1State extends State<Splash1> {
                 ),
               ),
               SizedBox(
-                height: screenHeight * 0.04,
+                height: screenHeight * 0.05,
               ),
               MaterialButton(
                 height: buttonHeight,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(25)),
                 ),
-                color:ktheme,
+                color: ktheme,
                 onPressed: () async {
                   _setHasSeenSplash();
                   Navigator.of(context).pushReplacement(

@@ -6,7 +6,10 @@ import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/model/category_model/category_model.dart';
 import 'package:fund_flow/model/transaction_model/transaction_model.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/utils/common_widgets/gradient_container.dart';
 import 'package:fund_flow/view/add_categories/add_categories.dart';
+import 'package:fund_flow/view/add_transactions/widgets/custom_container.dart';
+import 'package:fund_flow/view/add_transactions/widgets/custom_text_style.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:intl/intl.dart';
 
@@ -60,31 +63,18 @@ class _EditDetailsState extends State<EditDetails> {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          Container(
-            height: height * 0.28,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: const [
-                  ktheme,
-                  kwhite,
-                ],
-              ),
-            ),
+          GradientContainer(
+            height: height * 0.25,
             child: SafeArea(
               child: Column(
                 children: [
-                  SizedBox(height: height * 0.07),
+                  SizedBox(height: height * 0.06),
                   Center(
                       child: Text(
                     'Enter Amount',
                     style: TextStyle(
-                        fontSize: width * 0.08,
-                        fontWeight: FontWeight.w800,
+                        fontSize: width * 0.07,
+                        fontWeight: FontWeight.w400,
                         color: kwhite),
                   )),
                   SizedBox(
@@ -92,7 +82,7 @@ class _EditDetailsState extends State<EditDetails> {
                   ),
                   Center(
                     child: SizedBox(
-                      height: height * 0.095,
+                      height: height * 0.075,
                       width: width * 0.40,
                       child: TextFormField(
                         controller: _amountTextEditingController,
@@ -104,13 +94,13 @@ class _EditDetailsState extends State<EditDetails> {
                             prefixIcon: Icon(
                               Icons.currency_rupee_rounded,
                               color: ktheme,
-                              size: width * 0.08,
+                              size: width * 0.075,
                             )),
                         cursorColor: kblack,
                         keyboardType: TextInputType.number,
                         style: TextStyle(
-                            fontSize: width * 0.08,
-                            fontWeight: FontWeight.w700),
+                            fontSize: width * 0.075,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -119,14 +109,11 @@ class _EditDetailsState extends State<EditDetails> {
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                width: width * 0.116,
-              ),
               InkWell(
                 onTap: () {
                   setState(() {
-                    widget.data.type = CategoryType.income;
                     _selectedCategorytype = CategoryType.income;
                     _categoryID = null;
                   });
@@ -145,7 +132,7 @@ class _EditDetailsState extends State<EditDetails> {
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {
                             setState(() {
-                              _selectedCategorytype = newValue;
+                              _selectedCategorytype = CategoryType.income;
                               _categoryID = null;
                             });
                           }),
@@ -160,13 +147,9 @@ class _EditDetailsState extends State<EditDetails> {
                   ),
                 ),
               ),
-              SizedBox(
-                width: width * 0.059,
-              ),
               InkWell(
                 onTap: () {
                   setState(() {
-                    widget.data.type = CategoryType.expense;
                     _selectedCategorytype = CategoryType.expense;
                     _categoryID = null;
                   });
@@ -185,7 +168,7 @@ class _EditDetailsState extends State<EditDetails> {
                           groupValue: _selectedCategorytype,
                           onChanged: (newValue) {
                             setState(() {
-                              _selectedCategorytype = newValue;
+                              _selectedCategorytype = CategoryType.expense;
                               _categoryID = null;
                             });
                           }),
@@ -206,75 +189,11 @@ class _EditDetailsState extends State<EditDetails> {
             height: height * 0.03,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                width: width * 0.06,
-              ),
-              Container(
-                height: height * 0.075,
-                width: width * 0.415,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(
-                    color: kgrey,
-                    width: 1.0,
-                  ),
-                ),
+              CustomContainer(
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: DropdownButton<String>(
-                    isExpanded: true,
-                    underline: Container(),
-                    hint: Text(
-                      widget.data.category.name,
-                      style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: width * 0.055,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    value: _categoryID,
-                    items: (_selectedCategorytype == CategoryType.income
-                            ? CategoryDB().incomeCategoryListListner
-                            : CategoryDB().expenseCategoryListListner)
-                        .value
-                        .map((e) {
-                      return DropdownMenuItem(
-                        value: e.id,
-                        child: Text(
-                          e.name,
-                          style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: width * 0.055,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        onTap: () {
-                          _selectedCategoryModel = e;
-                        },
-                      );
-                    }).toList(),
-                    onChanged: (selectedValue) {
-                      setState(() {
-                        _categoryID = selectedValue;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: width * 0.040,
-              ),
-              Container(
-                height: height * 0.075,
-                width: width * 0.415,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(
-                    color: kgrey,
-                    width: 1.2,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(6.0),
                   child: Row(
                     children: [
                       Icon(
@@ -288,16 +207,47 @@ class _EditDetailsState extends State<EditDetails> {
                                 builder: (context) => AddCategories()));
                           },
                           child: Text(
-                            'New Category',
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontSize: width * 0.052,
-                                fontWeight: FontWeight.w600),
+                            'Add  Category',
+                            style: CustomTextStyle().textStyle,
                           )),
                     ],
                   ),
                 ),
               ),
+              CustomContainer(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: DropdownButton<String>(
+                    underline: Container(),
+                    hint: Text(
+                      widget.data.category.name,
+                      style: CustomTextStyle().textStyle,
+                    ),
+                    value: _categoryID,
+                    items: (_selectedCategorytype == CategoryType.income
+                            ? CategoryDB().incomeCategoryListListner
+                            : CategoryDB().expenseCategoryListListner)
+                        .value
+                        .map((e) {
+                      return DropdownMenuItem(
+                        value: e.id,
+                        child: Text(
+                          e.name,
+                          style: CustomTextStyle().textStyle,
+                        ),
+                        onTap: () {
+                          _selectedCategoryModel = e;
+                        },
+                      );
+                    }).toList(),
+                    onChanged: (selectedValue) {
+                      setState(() {
+                        _categoryID = selectedValue;
+                      });
+                    },
+                  ),
+                ),
+              )
             ],
           ),
           SizedBox(
@@ -316,8 +266,7 @@ class _EditDetailsState extends State<EditDetails> {
                     ),
                   ),
                   cursorColor: kblack,
-                  style: TextStyle(
-                      fontSize: width * 0.052, fontWeight: FontWeight.w600),
+                  style: CustomTextStyle().textStyle,
                 ),
               ),
             ],
@@ -359,10 +308,7 @@ class _EditDetailsState extends State<EditDetails> {
                       _selectedDate == null
                           ? 'pick a date'
                           : DateFormat("dd-MMMM-yyyy").format(_selectedDate!),
-                      style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: width * 0.053,
-                          fontWeight: FontWeight.w600),
+                      style: CustomTextStyle().textStyle,
                     )),
               ),
             ],
@@ -375,7 +321,7 @@ class _EditDetailsState extends State<EditDetails> {
               height: height * 0.05,
               minWidth: width * 0.4,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
               color: ktheme,
               onPressed: () {
                 EditedTansaction();

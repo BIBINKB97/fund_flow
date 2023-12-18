@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fund_flow/controller/chart_db/chart_db.dart';
+import 'package:fund_flow/controller/transaction_db/transaction_db.dart';
 import 'package:fund_flow/utils/colors.dart';
+import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/home_page/bottom_navbar/bottom_nav.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,6 +29,7 @@ class _Splash2State extends State<Splash2> {
 
   @override
   Widget build(BuildContext context) {
+    balanceAmount();
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
     final double avatarSize = screenHeight * 0.3;

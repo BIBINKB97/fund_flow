@@ -40,6 +40,7 @@ class transactionDB implements TransactionDbFunctions {
     transactionListNotifier.value.clear();
     transactionListNotifier.value.addAll(list);
     transactionListNotifier.notifyListeners();
+   
   }
 
   Future<void> editedTransaction(TransactionModel model) async {

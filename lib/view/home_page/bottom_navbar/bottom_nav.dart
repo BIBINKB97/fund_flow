@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fund_flow/utils/colors.dart';
 import 'package:fund_flow/view/add_Transactions/add_transactions.dart';
+import 'package:fund_flow/view/home_page/balance/balance.dart';
 import 'package:fund_flow/view/settings/settings.dart';
 import 'package:fund_flow/view/statitics/statitics.dart';
 import 'package:fund_flow/view/home_page/home_page.dart';
@@ -63,6 +64,7 @@ class _BottomNavState extends State<BottomNav> {
 
   @override
   Widget build(BuildContext context) {
+    balanceAmount();
     return Scaffold(
       body: screens[selectedIndex],
       bottomNavigationBar: SizedBox(

@@ -315,7 +315,7 @@ class _TransactionListState extends State<TransactionList> {
                             },
                             separatorBuilder: (context, index) {
                               return SizedBox(
-                                height: 10,
+                                height: 2,
                               );
                             },
                             itemCount: newList.length,

@@ -13,8 +13,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    transactionDB.instance.refreshAll();
     balanceAmount();
+    transactionDB.instance.refreshAll();
 
     return Scaffold(
       body: Column(

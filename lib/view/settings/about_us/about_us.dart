@@ -40,13 +40,13 @@ class AboutUs extends StatelessWidget {
                           "  is a money management app designed to help you track your expenses, create budgets, and achieve your financial goals. With our easy-to-use interface and powerful tools, you can take control of your finances and make informed decisions about your money.\n\nThis app is perfect for individuals and families who want to stay on top of their finances and make informed decisions about their money. Whether you're trying to save up for a big purchase or just looking to get a better handle on your day-to-day expenses, 'FundFlow' has you covered.",
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: width * 0.04,
+                        fontSize: width * 0.05,
                       )),
                 ],
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.45,
+              height: MediaQuery.of(context).size.height * 0.4,
             ),
             Text(
               'Developed by BBNTecLabs LLC',

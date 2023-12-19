@@ -63,9 +63,10 @@ class _Splash2State extends State<Splash2> {
                 ),
               ),
               SizedBox(
-                width: linearProgressWidth,
-                child: LinearProgressIndicator(),
-              ),
+                  width: linearProgressWidth,
+                  child: LinearProgressIndicator(
+                    borderRadius: BorderRadius.circular(20),
+                  )),
             ],
           ),
         ),

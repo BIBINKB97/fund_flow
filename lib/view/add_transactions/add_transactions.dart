@@ -66,7 +66,7 @@ class _AddTransactionState extends State<AddTransaction> {
                       child: Text(
                     'Enter Amount',
                     style: TextStyle(
-                        fontSize: width * 0.07,
+                        fontSize: width * 0.06,
                         fontWeight: FontWeight.w400,
                         color: kwhite),
                   )),
@@ -87,12 +87,12 @@ class _AddTransactionState extends State<AddTransaction> {
                             prefixIcon: Icon(
                               Icons.currency_rupee_rounded,
                               color: ktheme,
-                              size: width * 0.075,
+                              size: width * 0.065,
                             )),
                         cursorColor: kblack,
                         keyboardType: TextInputType.number,
                         style: TextStyle(
-                            fontSize: width * 0.075,
+                            fontSize: width * 0.065,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -133,7 +133,7 @@ class _AddTransactionState extends State<AddTransaction> {
                         "Income",
                         style: TextStyle(
                             color: kwhite,
-                            fontSize: width * 0.055,
+                            fontSize: width * 0.045,
                             fontWeight: FontWeight.w500),
                       )
                     ],
@@ -169,7 +169,7 @@ class _AddTransactionState extends State<AddTransaction> {
                         "Expense",
                         style: TextStyle(
                             color: kwhite,
-                            fontSize: width * 0.055,
+                            fontSize: width * 0.045,
                             fontWeight: FontWeight.w500),
                       )
                     ],
@@ -186,7 +186,7 @@ class _AddTransactionState extends State<AddTransaction> {
             children: [
               CustomContainer(
                 child: Padding(
-                  padding: const EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     children: [
                       Icon(
@@ -322,7 +322,7 @@ class _AddTransactionState extends State<AddTransaction> {
               child: Text(
                 'Submit',
                 style: TextStyle(
-                    fontSize: width * 0.052,
+                    fontSize: width * 0.045,
                     fontWeight: FontWeight.w500,
                     color: kwhite),
               ),

@@ -25,6 +25,7 @@ Future<void> showCategoryAddPopup(BuildContext context) async {
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 controller: nameEditingController,
+                maxLength: 15,
                 decoration: InputDecoration(
                     hintText: 'Enter category name',
                     border: OutlineInputBorder(
@@ -62,8 +63,7 @@ Future<void> showCategoryAddPopup(BuildContext context) async {
                   Navigator.of(ctx).pop();
                 },
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        ktheme)),
+                    backgroundColor: MaterialStateProperty.all(ktheme)),
                 child: Text('Add'),
               ),
             )
